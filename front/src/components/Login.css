@@ -1,0 +1,92 @@
+.containerLogin{
+    display: flex;
+}
+
+.formLogin{
+    padding: 6em 4em;
+    background: white;
+    width: 30%;
+    margin: 2em;
+    border-radius: 10pt;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.formLogin form{
+    margin: 10pt 0;
+    display: flex;
+    flex-direction: column;
+}
+.formLogin h2{
+    margin: 0 5pt;
+    text-align: left;
+}
+
+.formLogin label{
+    margin: 5pt 0;
+    font-size: 11pt;
+    text-align: left;
+}
+
+.formLogin a{
+    text-decoration: none;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.formLogin form input{
+    margin: 5pt 0;
+    padding: 10pt;
+    background: none;
+    border-radius: 5pt;
+    border: 1pt solid rgb(167, 167, 167);
+    width: auto;
+}
+.formLogin button{
+    background: #7f529a;
+    margin: 5pt 0;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: none;
+    width: 100%;
+    font-size: 11pt;
+    color: white;
+    font-weight: 600;
+    border-radius: 50pt;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10pt;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+.logo{
+    width:60%;
+    margin: 0;
+    padding: 0;
+  } 
+
+.background{
+    background: #7f529a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6em 4em;
+    width: 75%;
+}
+.background img{
+    width: 80%;
+}
+.formLogin .google{
+    background: white;
+    color: black;
+    margin: 10pt 0;
+    font-weight: 500;
+}
+.formLogin .google i{
+    margin: 0 5pt;
+    position: relative;
+    top: 2pt;
+}
+.formLogin fieldset{
+    border-top: 1px solid rgb(80, 80, 80);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}

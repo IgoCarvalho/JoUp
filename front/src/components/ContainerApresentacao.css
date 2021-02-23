@@ -1,0 +1,289 @@
+.mainContainer {
+    padding: 6em;
+}
+.apresentacao1{
+    display: flex;
+    padding: 2em 6em;
+    align-items: center;
+}
+
+
+
+.apresentacao1 .descricao {
+    padding: 4em 6em 0em 3em;
+    width: 50%;
+    text-align: left;
+   
+}
+.descricao img{
+    width: 10%;
+}
+.ilutracao {
+    padding: 6em 3em 0 3em;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+.ilutracao h3{
+    background: #C4C4C4;
+    padding: 5em;
+}
+section h2{
+    color: #7f529a;
+}
+
+section p{
+    text-align: left;
+    font-size: 11pt;
+}
+.apresentacao1 button{
+    background: #E95458;
+    padding: 12pt 15pt;
+    border-radius: 50pt;
+    font-size: 11pt;
+    font-weight: bold;
+    border: none;
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+}
+
+/*sessão 2*/
+
+.apresentacao2{
+    display: flex;
+    padding: 2em 6em;
+}
+
+.apresentacao2 .descricao {
+    padding: 6em 3em 0 3em;
+    width: 50%;
+    text-align: left;
+   
+}
+
+.ilutracao {
+    padding: 6em 3em 0 3em;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+.ilutracao h3{
+    background: #C4C4C4;
+    padding: 5em;
+}
+
+/*funcionalidades*/
+
+.funcionalidades{
+    display: flex;
+    text-align: left;
+    padding: 0;
+}
+.apresentacao3{
+    padding: 2em 6em;
+}
+
+.apresentacao3 h1{
+    text-align: left;
+    padding: 0 2em;
+    color: #7f529a;
+}
+
+.funcionalidades div{
+    margin: 0 3em 4em 3em;
+}
+
+.funcionalidades h2{
+    font-size: 14pt;
+}
+
+.apresentacao4 button{
+    background: #E95458;
+    padding: 12pt 28pt;
+    border-radius: 50pt;
+    margin: 20pt 0 6pt 0;
+    font-size: 11pt;
+    font-weight: bold;
+    border: none;
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+}
+
+/*planos*/
+.apresentacao4{
+    padding: 2em 6em;
+}
+
+
+.planos{
+    display: flex;
+    padding: 0 0 6em 0;
+    margin: 0;
+}
+
+.planos  .ativado{
+    margin: 5pt;
+    color: #27AE60;
+    font-weight: bold;
+
+}
+
+.planos .desativado{
+    margin: 5pt;
+    color: #BDBDBD;
+    font-weight: bold;
+
+}
+
+.apresentacao4 h1{
+    text-align: left;
+    padding: 0 2em;
+    color: #7f529a;
+}
+
+
+.planos h2{
+    font-size: 30pt;
+    padding: 0;
+    margin: 0;
+}
+.planos label{
+    font-size: 16pt;
+    color: #7f529a;
+    margin: 0;
+    padding: 0;
+}
+.planos a{
+    font-size: 10pt;
+    margin-top: 2em;
+}
+
+.plano1 {
+    background-color: white;
+    margin:0 3em;
+    padding: 2em;
+    border-radius: 10pt;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.plano2 {
+    background-color: white;
+    margin:0 3em;
+    padding: 2em;
+    border-radius: 10pt;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.plano3 {
+    background: #F2C94C;
+    margin:0 3em;
+    padding: 2em;
+    border-radius: 10pt;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.plano3 label{
+    color: white;
+}
+
+.plano3 h2{
+    color: white;
+}
+
+/*contato*/
+.apresentacao5{
+    display: flex;
+    padding: 2em 6em;
+}
+
+.apresentacao5 ul{
+    list-style: none;
+}
+.apresentacao5 input, textarea{
+    width: auto;
+    margin: 0 5pt;
+    padding: 10pt;
+    background: none;
+    border-radius: 5pt;
+    border: 1pt solid rgb(167, 167, 167);
+}
+
+.apresentacao5 textarea{
+    resize: none;
+    height: 60pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    padding: 10pt;
+    outline: none;
+}
+.apresentacao5 .descricao {
+    padding: 4em 4em 0em 3em;
+    text-align: left;
+   
+}
+
+.apresentacao5 .formContato{
+    padding: 4em 3em;
+   
+}
+
+.apresentacao5 li{
+    margin: 5pt 0;
+}
+.apresentacao5 .column1{
+    display: flex;
+    
+}
+.apresentacao5 .column2{
+    display: flex;
+    flex-direction: column;
+    
+}
+.apresentacao5 .column3{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.apresentacao5 ul{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.apresentacao5 form{
+    display: flex;
+    justify-content: right;
+    background-color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-size: 5pt;
+    padding: 4em;
+    margin: 0;
+    border-radius: 10pt;
+}
+
+.formContato button{
+    display: flex;
+    background: #E95458;
+    padding: 12pt 28pt;
+    border-radius: 50pt;
+    margin: 5pt;
+    font-size: 11pt;
+    font-weight: bold;
+    border: none;
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+}
+
+
+
+

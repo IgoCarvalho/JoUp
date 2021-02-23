@@ -1,0 +1,69 @@
+.containerProfile{
+    display: flex;
+    flex-direction: row;
+  }
+  .containerProfile section{
+    z-index: 1;
+  }
+  .menuLateral{
+    display: flex;
+    background-color: #7f529a;
+    align-items: center;
+    position: fixed;
+    text-align: left;
+    color: white;
+    padding: 4em 0 100% 0;
+    cursor: pointer;
+    margin: 0;
+  
+  }.menuLateral ul{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15pt;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+    font-size: 12pt;
+    cursor: pointer;
+  }
+  .menuLateral li{
+    align-items: center;
+    justify-content: center;
+    padding: 12pt 15pt;
+    width: 100%;
+    cursor: pointer;
+  
+  }
+  .menuLateral a{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
+  .menuLateral i{
+    font-size: 18pt;
+    margin: 0 5pt 0 20pt;
+    position: relative;
+    cursor: pointer;
+    top: 4pt;
+  }
+  .marcado a{
+    background-color: white;
+    cursor: pointer;
+    color: #7F529A;
+  }
+  .desmarcado {
+    background: none;
+    color: white;
+    cursor: pointer;
+  }
+  .desmarcado:hover{
+    background-color: white;
+    cursor: pointer;
+    color: #7F529A;
+  }
+  .desmarcado a:hover{
+    color: #7F529A;
+  }
+  .conteudo{
+    flex-grow: 2;
+  }

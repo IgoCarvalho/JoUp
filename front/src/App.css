@@ -1,0 +1,82 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+.App {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+button{
+  outline: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:active{
+  color: #E95458;
+}
+.containerProfile{
+  display: flex;
+  flex-direction: row;
+}
+.containerProfile section{
+  z-index: -1;
+}
+.menuLateral{
+  display: flex;
+  background-color: #7f529a;
+  align-items: center;
+  text-align: left;
+  color: white;
+  padding: 4em 0 14em 0;
+  margin: 0;
+
+}.menuLateral ul{
+  display: flex;
+  flex-direction: column;
+  padding: 0 15pt;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+  font-size: 12pt;
+  cursor: pointer;
+}
+.menuLateral li{
+  align-items: center;
+  justify-content: center;
+  padding: 12pt 15pt;
+  width: 100%;
+  cursor: pointer;
+
+}
+.menuLateral i{
+  font-size: 18pt;
+  margin: 0 5pt 0 20pt;
+  position: relative;
+  top: 4pt;
+}
+.marcado {
+  background-color: white;
+  cursor: pointer;
+  color: #7F529A;
+}
+.desmarcado {
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+.conteudo{
+  flex-grow: 2;
+}
+
+body {
+  background-color: #E2E2E2;
+}
+
+
+
