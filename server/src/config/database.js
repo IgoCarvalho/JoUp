@@ -1,15 +1,12 @@
-const mongoode = require('mongoose')
+const mongoose = require('mongoose');
 
-const dbConnection = 'mongodb://localhost:27017/joup';
+const dbConnectionString = 'mongodb://localhost:27017/joup';
 
-mongoode.connect(dbConnection, {
+mongoose.connect(dbConnectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
-})
-  .then(() => {
-    console.log('db connected');
-  })
-  .catch((error) => {
-    console.error(error);
-  })
+});
+
+mongoose.connection.on('error', () => console.log('db connection error:'));
+mongoose.connection.once('open', () => console.log('db connected'));
