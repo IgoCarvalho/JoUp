@@ -2,17 +2,16 @@ nav {
     background-color: white;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     z-index: 2;
-    padding:15pt 0; 
+    padding:20px 15px; 
     margin: 0;
     font-size: 15pt;
   
   }
  nav form{
     padding: 0;
-    margin: 0 14em;
+    margin: 0;
     display: flex;
   }
  nav form button{
@@ -26,7 +25,12 @@ nav {
     font-size: 15pt;
     cursor: pointer;
   }
-  
+  .busca{
+    display: flex;
+    justify-content: left;
+    margin: 0;
+    flex-grow: 1;
+  }
   form input{
     display: flex;
     outline: none;
@@ -34,17 +38,24 @@ nav {
     background-color: #EEEEEE;
     color: black;
     border-radius: 50pt 0 0 50pt;
+    font-family: 'Nunito Sans Regular';
     padding: 10pt 20pt;
-    font-size: 12pt;
+    font-size: 10pt;
+    margin-left: 14em;
     width: 300pt;
-    margin: 0;
   }
   .logoNav{
-    width: 5%;
+    width: 25%;
     display: flex;
-    margin: 0 10pt;
+    margin: 0 5px;
     padding: 0;
     cursor: pointer;
+  }
+  .perfilUser{
+    display: flex;
+    justify-content: right;
+    padding-right: 35px;
+    align-items: center;
   }
   .perfilLogado{
     background-color:#d3d3d3; 
@@ -59,6 +70,14 @@ nav {
   }
   .burgerMenu{
       cursor: pointer;
-      display: none;
+      color: #7F529A;
+      margin-right: 10px;
+  }
+  .sectionLogo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
   }
   

@@ -16,57 +16,48 @@ export class Servicos extends Component {
                     <div className="topContainer">
                         <h2>Serviços ofertados</h2>
                         <button><a href=""><i><MdAdd/></i>Adicionar serviço</a></button>
+                        <hr/>
                     </div>
                     <div className="mainContainer">
                         <ul className="listaServicos">
                             <li>
                                 <h3>Título Serviço</h3>
-                                <p>Eget egestas purus viverra accumsan in nisl nisi scelerisque.</p>
                                 <label>Design</label><label>UX</label><label>IHC</label>
                             </li>
                             <li>
                                 <h3>Título Serviço</h3>
-                                <p>Eget egestas purus viverra accumsan in nisl nisi scelerisque.</p>
                                 <label>Design</label><label>UX</label><label>IHC</label>
                             </li>
                             <li>
                                 <h3>Título Serviço</h3>
-                                <p>Eget egestas purus viverra accumsan in nisl nisi scelerisque.</p>
                                 <label>Design</label><label>UX</label><label>IHC</label>
                             </li>
                             <li>
                                 <h3>Título Serviço</h3>
-                                <p>Eget egestas purus viverra accumsan in nisl nisi scelerisque.</p>
                                 <label>Design</label><label>UX</label><label>IHC</label>
                             </li>
                             <li>
                                 <h3>Título Serviço</h3>
-                                <p>Eget egestas purus viverra accumsan in nisl nisi scelerisque.</p>
                                 <label>Design</label><label>UX</label><label>IHC</label>
                             </li>
                             <li>
                                 <h3>Título Serviço</h3>
-                                <p>Eget egestas purus viverra accumsan in nisl nisi scelerisque.</p>
                                 <label>Design</label><label>UX</label><label>IHC</label>
                             </li>
                             <li>
                                 <h3>Título Serviço</h3>
-                                <p>Eget egestas purus viverra accumsan in nisl nisi scelerisque.</p>
                                 <label>Design</label><label>UX</label><label>IHC</label>
                             </li>
                             <li>
                                 <h3>Título Serviço</h3>
-                                <p>Eget egestas purus viverra accumsan in nisl nisi scelerisque.</p>
                                 <label>Design</label><label>UX</label><label>IHC</label>
                             </li>
                             <li>
                                 <h3>Título Serviço</h3>
-                                <p>Eget egestas purus viverra accumsan in nisl nisi scelerisque.</p>
                                 <label>Design</label><label>UX</label><label>IHC</label>
                             </li>
                             <li>
                                 <h3>Título Serviço</h3>
-                                <p>Eget egestas purus viverra accumsan in nisl nisi scelerisque.</p>
                                 <label>Design</label><label>UX</label><label>IHC</label>
                             </li>
                         </ul>

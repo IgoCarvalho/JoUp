@@ -1,12 +1,33 @@
+@font-face {
+  font-family: 'Source Sans Pro Regular';
+  src: url('../src/fonts/SourceSansPro-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: 'Source Sans Pro Bold';
+  src: url('../src/fonts/SourceSansPro-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Source Sans SemiBold';
+  src: url('../src/fonts/SourceSansPro-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Nunito Sans Regular';
+  src: url('../src/fonts/NunitoSans-Regular.ttf');
+}
+
+
 html {
   scroll-behavior: smooth;
 }
 
 
-
 .App {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #F9F0FF;
   color: black;
 }
 button{

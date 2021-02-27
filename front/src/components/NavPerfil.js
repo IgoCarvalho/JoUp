@@ -12,15 +12,21 @@ export class NavPerfil extends Component {
         return (
             <div>
                 <nav className="mainNavPerfil">
+                <div className="sectionLogo">
                 <i className="burgerMenu"><BiMenu /></i>
                 <img src={logo} className="logoNav" alt="logo"/>
+                </div>
+                <div className="busca">
                 <form>
                     <input type="text" placeholder="Buscar projeto ..." />
                     <button><BiSearch /></button>
                 </form>
+                </div>
+                <div className="perfilUser">
                 <BiBell />
-                <div className="perfilLogado">
-                    <button><BiUser /></button>
+                    <div className="perfilLogado">
+                        <button><BiUser /></button>
+                    </div>
                 </div>
                 </nav>
             </div>

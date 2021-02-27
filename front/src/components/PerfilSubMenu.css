@@ -3,23 +3,29 @@
     flex-direction: row;
   }
   .containerProfile section{
-    z-index: 1;
+    z-index: 1; 
   }
-  .menuLateral{
+  .menuLateral:hover{
+    width: 220px;
+  }
+
+  .menuLateral{ 
     display: flex;
     background-color: #7f529a;
     align-items: center;
-    position: fixed;
     text-align: left;
     color: white;
     padding: 4em 0 100% 0;
+    transition: 0.5s;
+    overflow: hidden;
     cursor: pointer;
+    width: 40pt;
     margin: 0;
-  
   }.menuLateral ul{
     display: flex;
     flex-direction: column;
-    padding: 0 15pt;
+    padding: 0 0 0 12pt;
+    height: 800pt;
     margin: 0;
     list-style: none;
     align-items: center;
@@ -29,30 +35,35 @@
   .menuLateral li{
     align-items: center;
     justify-content: center;
-    padding: 12pt 15pt;
-    width: 100%;
+    font-family: 'Nunito Sans Regular';
+    padding: 6px 15px;
     cursor: pointer;
   
   }
   .menuLateral a{
     cursor: pointer;
     text-decoration: none;
-    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white; 
   }
   .menuLateral i{
-    font-size: 18pt;
-    margin: 0 5pt 0 20pt;
-    position: relative;
+    font-size: 22px;
+    margin: 0 12pt 0 0;
     cursor: pointer;
-    top: 4pt;
+    position: relative;
+    top: 3pt;
   }
+ 
   .marcado a{
-    background-color: white;
     cursor: pointer;
     color: #7F529A;
   }
   .desmarcado {
     background: none;
+    padding: 0;
+    margin: 0;
     color: white;
     cursor: pointer;
   }
@@ -63,7 +74,4 @@
   }
   .desmarcado a:hover{
     color: #7F529A;
-  }
-  .conteudo{
-    flex-grow: 2;
   }

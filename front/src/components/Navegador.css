@@ -1,36 +1,61 @@
 nav{
   position: fixed;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  padding: 0;
+  margin: 0;
   top: 0;
   left: 0;
+}
+.fullNav{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: auto 0;
+  align-items: center;
 }
 
 .navMain {
     list-style:none;
     display: flex;
-    margin: 0 3em;
+    margin: 0;
+    padding: 0;
 }
+
 .navMain li{
     cursor: pointer;
-    font-size: 13pt;
-    margin: 0 8pt;
-    font-weight: bold;
+    font-size: 12pt;
+    font-family: 'Nunito Sans Regular';
+    margin: 0 20px;
     padding: 10pt;
     color: #7f529a;
 }
 
-.logoNav{
+.navMain li a:hover{
+  color:#A580BC;
+
+}
+.navMain li a:active{
+  
+  color: #D6A000;
+  ;
+
+}
+.logoNav1{
   width: 5%;
   display: flex;
-  margin: 0 10pt;
+  margin: 0;
   padding: 0;
   cursor: pointer;
 }
 
 .perfil button{
     background: none;
+    padding: 0px 20px;
     border: none;
     font-size: 15pt;
+    font-family: 'Nunito Sans Regular';
     cursor: pointer;
     outline: none;
   }
@@ -44,14 +69,16 @@ nav{
   .perfil{
     display: flex;
     background-color: #7f529a;
-    border-radius: 50pt;
+    border-radius: 5pt;
     padding: 8pt;
     margin-left: 15pt;
+  }
+  .perfil:hover{
+    background-color: #633F78;
   }
   .perfil .login{
     font-size: 12pt;
     color: white;
-    font-weight: bold;
   }
 .login a{
   color: white;

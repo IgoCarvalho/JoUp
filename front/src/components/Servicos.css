@@ -1,45 +1,50 @@
 
 
+
 .MainServicos{
     display: flex;
-    padding: 5em 0 0 0 ;
+    justify-content: left;
+    padding: 5em 0 0 0;
+    background: none;
 }
  
-.Submenu{
-    width: 20%;
-} 
+
 
 .ContainerServicos{
-    padding: 4em 3em;
-    width: 80%;
+    padding: 0;
+    padding: 2em 0;
+    margin: 15px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 .topContainer h2{
     color: #7f529a;
+    font-family: 'Source Sans SemiBold';
+    flex-grow: 1;
 }
 .topContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    position: relative;
     align-items: center;
-    padding: 0 10pt 6pt 10pt;
-    border-bottom: 1px solid rgb(150, 150, 150);
-    margin: 0;
+    padding: 0;
+    margin: 0 15px;
     
 }
 
 .topContainer button{
-    display: flex;
-    align-items: center;
     border: none;
     background:#7f529a;
+    font-family: 'Source Sans SemiBold';
     color: white;
-    padding: 6pt 12pt;
+    padding: 4pt 12pt;
     border-radius: 50pt;
-    font-size: 11pt;
-    font-weight: bolder;
+    font-size: 12pt;
     cursor: pointer;
     outline: none;
+    margin: 0;
 }
 .topContainer button a{
     text-decoration: none;
@@ -57,41 +62,46 @@
 }
 .mainContainer{
     padding: 0;
+    background: none;
     margin: 0;
 }
 .listaServicos {
     list-style: none;
     display: flex;
-    align-items: center;
-    justify-content: left;
+    flex-grow: 1;
+    justify-content: center;
+    border-top: 1px solid #B2B2B2;
     flex-wrap: wrap;
-    padding: 1em 0;
+    padding: 20px 0 0 0;
     margin: 0;
 }
 
 .listaServicos li{
     background: white;
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
-    align-items: center;
-    width: 18%;
-    padding: 2em;
+    padding: 15px;
+    width: 15%;
     border-radius: 5pt;
     font-size: 10pt;
-    margin: 5pt;
+    margin: 10px auto;
 }
 
 .listaServicos h3{
     color: #7f529a;
+    font-family: 'Source Sans Pro Regular';
     font-size: 13pt;
-    margin: 0;
+    margin: 0 0 15pt 0;
 }
 
 .listaServicos label{
-    border-radius: 50pt;
+    border-radius: 50px;
     background: #EEEEEE;
-    margin-top: 10pt;
+    margin-top: 50pt;
     margin-right:5pt;
-    padding: 5pt 10pt;
+    padding: 3px 10px;
+    font-size: 10pt;
+    font-family: 'Nunito Sans Regular';
+    cursor: pointer;
 }
 
 .listaServicos p{

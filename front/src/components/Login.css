@@ -1,19 +1,27 @@
 .containerLogin{
     display: flex;
+    background-color: white;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    padding: 0;
+    left: 0;
 }
 
 .formLogin{
-    padding: 6em 4em;
+    padding:0 2em 4em 2em;
     background: white;
-    width: 30%;
     margin: 2em;
-    border-radius: 10pt;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .formLogin form{
-    margin: 10pt 0;
+    margin: 5pt 0;
+    font-family: 'Nunito Sans Regular';
     display: flex;
     flex-direction: column;
+}
+.formLogin input{
+    font-size: 10pt;
+    font-family: 'Nunito Sans Regular';
 }
 .formLogin h2{
     margin: 0 5pt;
@@ -49,6 +57,7 @@
     font-size: 11pt;
     color: white;
     font-weight: 600;
+    font-family: 'Nunito Sans Regular';
     border-radius: 50pt;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10pt;
@@ -68,13 +77,15 @@
     justify-content: center;
     align-items: center;
     padding: 6em 4em;
-    width: 75%;
+    flex-grow: 1;
 }
 .background img{
-    width: 80%;
+    width: 60%;
+    margin: -10em 20em;
 }
 .formLogin .google{
     background: white;
+    font-family: 'Nunito Sans Regular';
     color: black;
     margin: 10pt 0;
     font-weight: 500;
@@ -89,4 +100,7 @@
     border-left: none;
     border-right: none;
     border-bottom: none;
+}
+.formLogin label{
+    font-family: 'Nunito Sans Regular';
 }

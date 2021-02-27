@@ -13,7 +13,7 @@ export class Navegador extends Component {
         return (
             <div>
                 <nav className="fullNav">
-                    <img src={logo} className="logoNav" alt="logo"/>
+                    <img src={logo} className="logoNav1" alt="logo"/>
                     <ul className="navMain">
                         <li><a href="#sobre">Sobre</a></li>
                         <li><a href="#funcionalidades">Funcionalidades</a></li>

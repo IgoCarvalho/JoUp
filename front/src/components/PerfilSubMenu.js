@@ -11,7 +11,7 @@ export class PerfilSubMenu extends Component {
         return (
             <div>
                 <section className="containerProfile">
-                    <section className="menuLateral">
+                    <section className="menuLateral"> 
                         <ul>
                             <li className="desmarcado"><a href=""><i><BiShow /></i>Visão Geral</a></li>
                             <li className="desmarcado"><a href=""><i><FaRegClipboard /></i>Projetos</a></li>
