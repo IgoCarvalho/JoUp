@@ -1,0 +1,89 @@
+.AsideMenu{
+    display: flex;
+    flex: row;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.AsideContainer{
+    display: flex;
+    background-color: #7f529a;
+    align-items: center;
+    text-align: left;
+    color: white;
+    padding: 0;
+    transition: 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+    width: 40pt;
+    height: 100%;
+    margin: 0;
+    white-space: nowrap;
+}
+.AsideContainer tr{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: auto 10px;
+}
+
+
+.AsideContainer-aberto{
+    width: 220px !important;
+}
+
+.AsideContainer table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: -75px;
+    padding: 0;
+    margin: 0;
+}
+.AsideContainer table i{
+    position: relative;
+    top: 5px;
+    font-size: 26px;
+    padding: 20px 12px 20px 10px;
+}
+.AsideContainer td {
+    cursor: pointer;
+    width: 100%;
+}
+.AsideContainer .legend{
+    padding: 0 30px 0 0px;
+}
+.AsideContainer .desmarcado a{
+    color: white;
+}
+.AsideContainer .desmarcado i{
+    color: white;
+}
+.AsideContainer .marcado{
+    background-color: rgb(255, 255, 255);
+    color: #7f529a;
+    margin: 0;
+    padding: 0;
+}
+
+.marcado td{
+    color: #7f529a;
+}
+.AsideContainer .marcado td i{
+    color: #7f529a;
+}
+
+
+@media (min-width: 1400px) and (max-width: 1920px){ 
+    .AsideContainer table{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        top: -126px;
+        padding: 0;
+        margin: 0;
+    }
+} 

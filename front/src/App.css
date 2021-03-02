@@ -2,7 +2,6 @@
   font-family: 'Source Sans Pro Regular';
   src: url('../src/fonts/SourceSansPro-Regular.ttf'); 
 }
-
 @font-face {
   font-family: 'Source Sans Pro Bold';
   src: url('../src/fonts/SourceSansPro-Bold.ttf');
@@ -23,81 +22,57 @@ html {
   scroll-behavior: smooth;
 }
 
+body{
+  background-color: #F9F0FF;
+}
 
 .App {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #F9F0FF;
-  color: black;
 }
-button{
-  outline: none;
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
 a{
+  margin: 0;
+  padding: 0;
   text-decoration: none;
 }
 
-a:active{
-  color: #E95458;
+h1{
+  font-family: 'Source Sans Pro Bold';
 }
-.containerProfile{
-  display: flex;
-  flex-direction: row;
-}
-.containerProfile section{
-  z-index: -1;
-}
-.menuLateral{
-  display: flex;
-  background-color: #7f529a;
-  align-items: center;
-  text-align: left;
-  color: white;
-  padding: 4em 0 14em 0;
+h2, h3{
+  font-family: 'Source Sans SemiBold';
   margin: 0;
-
-}.menuLateral ul{
-  display: flex;
-  flex-direction: column;
-  padding: 0 15pt;
-  margin: 0;
-  list-style: none;
-  align-items: center;
-  font-size: 12pt;
-  cursor: pointer;
-}
-.menuLateral li{
-  align-items: center;
-  justify-content: center;
-  padding: 12pt 15pt;
-  width: 100%;
-  cursor: pointer;
-
-}
-.menuLateral i{
-  font-size: 18pt;
-  margin: 0 5pt 0 20pt;
-  position: relative;
-  top: 4pt;
-}
-.marcado {
-  background-color: white;
-  cursor: pointer;
-  color: #7F529A;
-}
-.desmarcado {
-  background: none;
-  color: white;
-  cursor: pointer;
-}
-.conteudo{
-  flex-grow: 2;
 }
 
-body {
-  background-color: #E2E2E2;
+p, label, a, legend{
+  font-family: 'Nunito Sans Regular';
 }
 
 
+input:hover{
+  border: 1px solid #7f529a;
+  background-color: #F9F0FF;
+}
+textarea:hover{
+  border: 1px solid #7f529a;
+  background-color: #F9F0FF;
+}
 
+form input, textarea{
+  border: 1px solid #C1C0C0;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 3.5px;
+  font-family: 'Nunito Sans Regular';
+  margin: 5px;
+  outline: none;
+}
+
+button{
+  outline: none;
+}

@@ -1,0 +1,29 @@
+.menu{
+    padding: 0 3.5em;
+}
+.menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li{
+    color: #7F529A;
+    margin: 0 20px;
+}
+
+.menu a:active{
+    color: #D6A000;
+}
+.menu a:hover{
+    color:#D6A000;
+}
+
+@media (min-width: 1400px) and (max-width: 1920px){ 
+    .menu{
+        padding: 0 4em;
+    }
+} 

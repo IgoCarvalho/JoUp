@@ -1,0 +1,77 @@
+.FormLogin form{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 280px;
+    padding: 0;
+    margin: 1em 0;
+}
+.FormLogin form input{
+    margin: 5px 0;
+    width: 100%;
+}
+.FormLogin {
+    padding: 0;
+    margin: 0;
+}
+.FormLogin fieldset{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    border-top: 1px solid #929292;
+    margin-top: 5px;
+    padding: 5px 0;
+    flex-direction: column;
+}
+.FormLogin fieldset legend{
+    padding: 0 10px;
+    color: #929292;
+}
+.FormLogin i{
+    display: flex;
+    margin: 3px;
+}
+.FormLogin fieldset button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: white;
+}
+
+.FormLogin fieldset button:hover{
+    color: black;
+    background-color: white;
+}
+
+.FormLogin fieldset button:active{
+    color: black;
+    background-color: white;
+}
+.senha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.senha input{
+    border: none;
+    border-radius: 3.5px 0 0 3.5px;
+    border-top:  1px solid #C1C0C0;
+    border-left:  1px solid #C1C0C0;
+    border-bottom:  1px solid #C1C0C0;
+}
+.senha button{
+    border: 0;
+    background: none;
+    border-radius: 0 3.5px 3.5px 0;
+    border-top:  1px solid #C1C0C0;
+    border-right:  1px solid #C1C0C0;
+    border-bottom:  1px solid #C1C0C0;
+    padding: 10px;
+    color: #979797;
+    font-size: 15px;
+    cursor: pointer;
+}

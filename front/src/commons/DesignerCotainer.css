@@ -1,0 +1,12 @@
+.DesignerCotainer{
+    background-color: #7F529A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.DesignerCotainer img{
+    width:58%;
+    padding: 50px 70px;
+}

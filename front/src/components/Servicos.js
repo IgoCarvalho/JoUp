@@ -1,68 +1,24 @@
 import React, { Component } from 'react'
-import NavPerfil from './NavPerfil'
-import PerfilSubMenu from './PerfilSubMenu'
-import { GrAddCircle} from "react-icons/gr";
-import { IoIosAdd } from "react-icons/io";
-import { MdAdd} from "react-icons/md";
+import AsideMenu from '../commons/AsideMenu';
+import ContainerServico from '../commons/ContainerServico';
 import '../components/Servicos.css';
+import Nav from './Nav';
+import NavPerfil from './NavPerfil';
 
 export class Servicos extends Component {
+    state= {
+        menu: false
+    };
+
+    abreMenu=()=>{
+        this.setState({menu:!this.state.menu});
+    }
     render() {
         return (
-            <div className="MainServicos">
-                <NavPerfil/>
-                <div className="Submenu"><PerfilSubMenu/></div>
-                <div className="ContainerServicos">
-                    <div className="topContainer">
-                        <h2>Serviços ofertados</h2>
-                        <button><a href=""><i><MdAdd/></i>Adicionar serviço</a></button>
-                        <hr/>
-                    </div>
-                    <div className="mainContainer">
-                        <ul className="listaServicos">
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <label>Design</label><label>UX</label><label>IHC</label>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <label>Design</label><label>UX</label><label>IHC</label>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <label>Design</label><label>UX</label><label>IHC</label>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <label>Design</label><label>UX</label><label>IHC</label>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <label>Design</label><label>UX</label><label>IHC</label>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <label>Design</label><label>UX</label><label>IHC</label>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <label>Design</label><label>UX</label><label>IHC</label>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <label>Design</label><label>UX</label><label>IHC</label>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <label>Design</label><label>UX</label><label>IHC</label>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <label>Design</label><label>UX</label><label>IHC</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div className="servicos">
+                <NavPerfil abrirMenu={this.abreMenu}/>
+                <AsideMenu menu={this.state.menu}/>
+                <ContainerServico/>
             </div>
         )
     }

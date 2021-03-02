@@ -1,0 +1,32 @@
+.competencias{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6em 15%;
+    background-color: #7F529A;
+}
+
+.texto2{
+    color: white;
+    text-align: left;
+    padding: 3em;
+}
+
+.texto2 h2{
+    padding-right: 60px;
+}
+.texto2 p{
+    font-size: 13px;
+}
+
+.video iframe{
+    margin: 0 20pt 0 0;
+}
+@media (min-width: 1400px) and (max-width: 1920px){ 
+    .competencias { 
+        padding: 8em 18%; 
+    }
+    .texto2 {
+        padding-left: 80px;
+    }
+} 

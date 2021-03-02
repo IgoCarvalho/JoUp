@@ -1,0 +1,52 @@
+nav{
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(127, 82, 154, 0.36);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+nav li a{
+    color: #7F529A;
+}
+nav button{
+    display: flex;
+    margin: 0;
+}
+
+.entrar{
+    color: white;
+}
+
+.NavPerfil{
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(127, 82, 154, 0.36);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.NavPerfil .LogoMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.NavPerfil .LogoMenu button{
+    color: #7F529A;
+    font-size: 20px;
+    margin-right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+

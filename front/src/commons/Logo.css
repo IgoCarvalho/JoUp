@@ -1,0 +1,32 @@
+.containerLogo{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.containerLogo a{
+    width: 60px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.logo{
+    width: 100%;
+    display: flex;
+}
+
+.containerLogoMax{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.containerLogoMax a{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.logoMax{
+    width: 50%;
+    display: flex;
+}

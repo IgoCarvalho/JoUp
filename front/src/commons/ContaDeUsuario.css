@@ -1,0 +1,27 @@
+.containerConta{
+    background: rgb(255, 255, 255);
+    padding: 0 12vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    height: 100%;
+}
+
+.containerConta h2{
+    color: #7F529A;
+    white-space: nowrap;
+}
+.containerConta label a{
+    color: #7F529A;
+    font-size: 13px;
+}
+.containerConta label{
+    font-size: 13px;
+}
+
+@media (min-width: 1400px) and (max-width: 1920px){ 
+    .containerConta {
+        padding: 0 15vw;
+    }
+}
