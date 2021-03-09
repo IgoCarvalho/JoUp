@@ -6,6 +6,7 @@ mongoose.connect(dbConnectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
+  useFindAndModify: false,
 });
 
 mongoose.connection.on('error', () => console.log('db connection error:'));
