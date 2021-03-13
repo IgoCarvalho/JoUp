@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export class CadastroUsuario extends Component {
     render() {
-        return (
+        return ( 
             <div className="containerConta">
                 <LogoMax/>
                 <h2>Cadastro</h2>

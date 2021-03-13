@@ -1,4 +1,9 @@
-.PerfilUser button{
+.PerfilUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.PerfilUser .avatar{
     background: #F9F0FF;
     padding:10px;
     display: flex;
@@ -8,4 +13,12 @@
     font-size: 20px;
     color: #787878;
     cursor: pointer;
+}
+
+.PerfilUser .notificacao{
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #7f529a;
+    margin: 0 5px;
 }

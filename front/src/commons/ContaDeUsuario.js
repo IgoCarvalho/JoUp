@@ -12,7 +12,7 @@ export class ContaDeUsuario extends Component {
         return (
             <div className="containerConta">
                 <LogoMax/>
-                <h2>Entrar como designer</h2>
+                <h2>Acessar minha conta</h2>
                 <label>Não possui conta? <Link to="/cadastro">Cadastre-se</Link></label>
                 <FormLogin/>
             </div>

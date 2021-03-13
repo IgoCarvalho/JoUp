@@ -1,0 +1,52 @@
+.ContratarPlano{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    height: 100%;
+}
+.HeaderPlanos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding:0 15.5% 10px 15.5%;
+    color: #7F529A;
+}
+.bNext{
+    padding: 15px 15.5%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ContratarPlano .planos{
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 0 15%;
+}
+.ContratarPlano .planos div:hover{
+    border: 1px solid #7F529A;
+
+}
+
+.ContratarPlano .planos div{
+    padding: 25px 15px;
+}
+
+.ContratarPlano .planos .premium{
+    background-color: #7F529A;
+}
+
+
+.ContratarPlano .planos button{
+    display: none;
+}
+.ContratarPlano .planos a{
+    display: none;
+}
+
+.ContratarPlano .planos table{
+    margin: 0;
+    padding: 0;
+}

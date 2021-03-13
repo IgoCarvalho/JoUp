@@ -6,8 +6,11 @@
 }
 
 .Busca input{
-    border: none;
-    background: #F9F0FF;
+    border-top: 1px solid #919191;
+    border-left: 1px solid #919191;
+    border-bottom: 1px solid #919191;
+    border-right: none;
+    background: white;
     border-radius: 50pt 0 0 50pt;
     padding:10px 15pt;
     width: 350px;
@@ -21,8 +24,11 @@
 }
 .Busca button{
     border-radius: 0 50pt 50pt 0;
-    border: none;
-    background: #F9F0FF;
+    border-top: 1px solid #919191;
+    border-right: 1px solid #919191;
+    border-bottom: 1px solid #919191;
+    border-left: none;
+    background: white;
     padding: 6.5px 10px;
     cursor: pointer;
     /* border-top: 1px solid #C1C0C0;
@@ -31,4 +37,7 @@
     border-left: 1px solid #ffffff;
     border-radius: 0 50pt 50pt 0; */
     margin: 0 0 0 -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

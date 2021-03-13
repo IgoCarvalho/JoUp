@@ -9,8 +9,10 @@
 .AsideContainer{
     display: flex;
     background-color: #7f529a;
+    justify-content: flex-start;
     align-items: center;
     text-align: left;
+    position: fixed;
     color: white;
     padding: 0;
     transition: 0.5s;
@@ -36,11 +38,10 @@
 .AsideContainer table{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    position: relative;
-    top: -75px;
-    padding: 0;
+    justify-content: flex-start;
+    padding: 8em 0 0 0;
     margin: 0;
+    height: 100%;
 }
 .AsideContainer table i{
     position: relative;
@@ -74,16 +75,4 @@
 .AsideContainer .marcado td i{
     color: #7f529a;
 }
-
-
-@media (min-width: 1400px) and (max-width: 1920px){ 
-    .AsideContainer table{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
-        top: -126px;
-        padding: 0;
-        margin: 0;
-    }
-} 
+ 

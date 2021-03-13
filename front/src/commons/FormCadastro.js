@@ -18,7 +18,7 @@ export class FormCadastro extends Component {
                     <input type="password" placeholder="Digite novamente sua senha"/><button><MdVisibilityOff/></button>
                     </div>
                     <br/>
-                    <button className="bRoxoRedondo">Confirmar</button>
+                    <button className="bRoxoRedondo"><Link to="opcoescadastro">Confirmar</Link></button>
                     <fieldset>
                     <legend>ou</legend>
                     <button className="bRoxoRedondo"><i><FcGoogle/></i>Cadastre-se com o Google</button>

@@ -13,51 +13,35 @@ export class ContainerServico extends Component {
                 </div><div className="CardsContainer">
                     <ul className="listaServicos">
                             <li>
-                                <h3>Título Serviço</h3>
+                                <h3>Criação de interface para sites e aplicativos</h3>
                                 <div><label>Design</label><label>UX</label><label>IHC</label></div>
                             </li>
                             <li>
-                                <h3>Título Serviço</h3>
+                                <h3>Identidade Visual</h3>
                                 <div><label>Design</label><label>UX</label><label>IHC</label></div>
                             </li>
                             <li>
-                                <h3>Título Serviço</h3>
+                                <h3>Cartão de visitas</h3>
                                 <div><label>Design</label><label>UX</label><label>IHC</label></div>
                             </li>
                             <li>
-                                <h3>Título Serviço</h3>
+                                <h3>Animação de logo</h3>
                                 <div><label>Design</label><label>UX</label><label>IHC</label></div>
                             </li>
                             <li>
-                                <h3>Título Serviço</h3>
+                                <h3>Consultoria de design para redes sociais</h3>
                                 <div><label>Design</label><label>UX</label><label>IHC</label></div>
                             </li>
                             <li>
-                                <h3>Título Serviço</h3>
+                                <h3>Edição de vídeos de data comemorativa</h3>
                                 <div><label>Design</label><label>UX</label><label>IHC</label></div>
                             </li>
                             <li>
-                                <h3>Título Serviço</h3>
+                                <h3>Criação de paleta de cores</h3>
                                 <div><label>Design</label><label>UX</label><label>IHC</label></div>
                             </li>
                             <li>
-                                <h3>Título Serviço</h3>
-                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
-                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
-                            </li>
-                            <li>
-                                <h3>Título Serviço</h3>
+                                <h3>Criação de interface para sites e aplicativos</h3>
                                 <div><label>Design</label><label>UX</label><label>IHC</label></div>
                             </li>
                         </ul>

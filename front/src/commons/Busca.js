@@ -7,7 +7,7 @@ export class Busca extends Component {
         return (
             <div className="Busca">
                 <form>
-                    <input type="text" placeholder="Pesquisar projeto"/><button><i><AiOutlineSearch/></i></button>
+                    <input type="text" placeholder="Buscar"/><button><i><AiOutlineSearch/></i></button>
                 </form>
             </div>
         )

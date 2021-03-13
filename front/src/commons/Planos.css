@@ -1,7 +1,7 @@
 .planos{
     display: flex;
     justify-content: space-between;
-    padding: 10em 15%;
+    padding: 10em 15vw;
     
 }
 .planos div{

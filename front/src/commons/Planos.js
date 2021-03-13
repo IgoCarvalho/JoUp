@@ -11,15 +11,12 @@ export class Planos extends Component {
                 <div className="basico">
                     <h3>Plano Básico</h3>
                     <h1>R$ 19,99</h1>
-                    <p>Acompanhamento de até 3 projetos por mês</p>
+                    <p>Oferte até  5 serviços e acompanhe até 3 projetos por mês.</p>
                     <table>
                     <tr>
-                        <td><i><MdDone/></i></td><td className="descricao">Apresentações ilimitadas de serviços ofertados.</td>
-                    </tr>
                         <td><i><MdDone/></i></td><td className="descricao">Sessões ilimitadas de detalhamento do projeto.</td>
-                    <tr>
-                        <td><i><MdDone/></i></td><td className="descricao">Checklist de fases de desenvolvimento.</td>
                     </tr>
+                        <td><i><MdDone/></i></td><td className="descricao">Checklist de fases de desenvolvimento.</td>
                     <tr>
                         <td><i><MdDone/></i></td><td className="descricao">Link compartilhável de cada projeto.</td>
                     </tr>
@@ -39,15 +36,12 @@ export class Planos extends Component {
                 <div className="completo">
                 <h3>Plano Completo</h3>
                     <h1>R$ 49,99</h1>
-                    <p>Acompanhamento de até 10 projetos por mês</p>
+                    <p>Oferte até  10 serviços e acompanhe até 10 projetos por mês.</p>
                     <table>
                     <tr>
-                        <td><i><MdDone/></i></td><td className="descricao">Apresentações ilimitadas de serviços ofertados.</td>
-                    </tr>
                         <td><i><MdDone/></i></td><td className="descricao">Sessões ilimitadas de detalhamento do projeto.</td>
-                    <tr>
-                        <td><i><MdDone/></i></td><td className="descricao">Checklist de fases de desenvolvimento.</td>
                     </tr>
+                        <td><i><MdDone/></i></td><td className="descricao">Checklist de fases de desenvolvimento.</td>
                     <tr>
                         <td><i><MdDone/></i></td><td className="descricao">Link compartilhável de cada projeto.</td>
                     </tr>
@@ -67,15 +61,12 @@ export class Planos extends Component {
                 <div className="premium">
                 <h3>Plano Premium</h3>
                     <h1>R$ 69,99</h1>
-                    <p>Acompanhamento ilimitado de projetos por mês</p>
+                    <p>Ofertas de serviços e companhamento ilimitado de projetos por mês</p>
                     <table>
                     <tr>
-                        <td><i><MdDone/></i></td><td className="descricao">Apresentações ilimitadas de serviços ofertados.</td>
-                    </tr>
                         <td><i><MdDone/></i></td><td className="descricao">Sessões ilimitadas de detalhamento do projeto.</td>
-                    <tr>
-                        <td><i><MdDone/></i></td><td className="descricao">Checklist de fases de desenvolvimento.</td>
                     </tr>
+                        <td><i><MdDone/></i></td><td className="descricao">Checklist de fases de desenvolvimento.</td>
                     <tr>
                         <td><i><MdDone/></i></td><td className="descricao">Link compartilhável de cada projeto.</td>
                     </tr>
