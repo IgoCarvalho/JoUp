@@ -1,0 +1,156 @@
+.ContainerModalServico{
+    padding: 8em 18%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.815);
+    z-index: 200;
+}
+.ContainerModalServico h2{
+    color: #7f529a;
+    font-size: 18px;
+    font-family: 'Source Sans SemiBold';
+    text-align: left;
+    padding: 0 10px;
+}
+.ContainerModalServico sup{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 8px;
+    color: red;
+    font-size: 18px;
+}
+.editTextoOptions{
+    display: flex;
+    margin: 10px;
+}
+.editTextoOptions button{
+    background: none;
+    border: none;
+}
+.ContainerModalServico ul {
+    list-style: none;
+}
+.cabecalhoServico {
+    padding: 0;
+    margin: 10px 0;
+}
+.cabecalhoServico input{
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 23px;
+    font-family: 'Nunito Sans Regular';
+    border-bottom: 2px solid #7f529a;
+    padding: 0 0 10px 0;
+}
+
+.ModalServico{
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding: 2em;
+}
+
+.detalhesServico{
+    display: flex;
+    justify-content: space-between;
+}
+.detalhesServico textarea{
+    resize: none;
+    width: 400px;
+}
+
+.numericInputs{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+}
+.camposPreco{
+    padding:0  2em;
+}
+.camposPreco i{
+    color: black;
+    margin: 0 10px 0 0;
+    font-size: 13px;
+}
+.camposPreco button{
+    border: 1px solid #787878;
+    box-sizing: border-box;
+    border-radius: 32px;
+    padding: 10px 0;
+    width: 180px;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+}
+.numericInputs legend{
+    color: #7f529a;
+    text-align: left;
+}
+
+.detalhesServico .textarea1{
+    height: 120px;
+}
+.detalhesServico .textarea2{
+    height: 320px;
+}
+.detalhesServico .textarea3{
+    height: 250px;
+}
+.numericInputs li{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 10px;
+}
+.numericInputs li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.numericInputs label{
+    background: #F7F7F7;
+    border: 1px solid #C1C0C0;
+    box-sizing: border-box;
+    border-radius: 3.5px 0px 0px 3.5px;
+    padding: 8px;
+    margin: 0;
+    color: #919191;
+}
+.numericInputs input{
+    margin: 0 0 0 -1px;
+    border-radius: 0px 3.5px 3.5px 0px;
+}
+
+.SubmitOptions{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0 0 0;
+}
+
+.SubmitOptions .Salvar{
+    background: #3CB080;
+    border-radius: 50px;     
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    margin: 0;
+    font-family: 'Nunito Sans Regular';
+    cursor: pointer;
+}
+
+.SubmitOptions .Cancelar{
+    background: #E54348;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    margin: 0 0 0 10px;
+    font-family: 'Nunito Sans Regular';
+    cursor: pointer;
+}

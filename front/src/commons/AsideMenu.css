@@ -3,7 +3,7 @@
     flex: row;
     color: white;
     padding: 0;
-    margin: 0;
+    margin: 0 220px 0 0;
 }
 
 .AsideContainer{
@@ -22,6 +22,7 @@
     height: 100%;
     margin: 0;
     white-space: nowrap;
+    z-index: 10;
 }
 .AsideContainer tr{
     display: flex;
@@ -29,10 +30,20 @@
     align-items: center;
     padding: auto 10px;
 }
+.AsideContainer tr:hover{
+    background-color: white;
+    color: #7f529a;
+}
+.AsideContainer td:hover{
+    color: #7f529a;
+}
+.AsideContainer td i:hover{
+    color: #7f529a;
+}
 
 
 .AsideContainer-aberto{
-    width: 220px !important;
+    width: 200px !important;
 }
 
 .AsideContainer table{
@@ -46,8 +57,8 @@
 .AsideContainer table i{
     position: relative;
     top: 5px;
-    font-size: 26px;
-    padding: 20px 12px 20px 10px;
+    font-size: 20px;
+    padding: 20px 14px;
 }
 .AsideContainer td {
     cursor: pointer;
@@ -74,5 +85,52 @@
 }
 .AsideContainer .marcado td i{
     color: #7f529a;
+}
+
+.projetos {
+    color: #7f529a;
+    background-color: transparent;
+    padding: 0;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.dropdownProjetos {
+    position: relative;
+    display: flex;
+    margin: 0;
+    z-index: 20;
+}
+
+.dropdownProjContent {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #f9f9f9;
+    width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+  
+.dropdownProjContent span {
+    color: #7f529a;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer
+  }
+  
+.dropdownProjContent span:hover {background-color: #f1f1f1}
+  
+.dropdownProjetos:hover .dropdownProjContent {
+    display: block;
+}
+  
+.dropdownProjetos:hover .projetos {
+    background-color: none;
+    
 }
  

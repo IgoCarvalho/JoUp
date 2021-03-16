@@ -25,12 +25,11 @@
     transition: 0.5s;
     padding: 0 15%;
 }
-.ContratarPlano .planos div:hover{
-    border: 1px solid #7F529A;
 
-}
 
-.ContratarPlano .planos div{
+.ContratarPlano .planos .basico,
+.ContratarPlano .planos .completo,
+.ContratarPlano .planos .premium {
     padding: 25px 15px;
 }
 

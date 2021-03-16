@@ -6,7 +6,14 @@ import CadastroPage2 from './CadastroPage2';
 import CadastroPage3 from './CadastroPage3';
 import Home from './Home';
 import Login from './Login';
+import Projetos from './Projetos';
+import ServicoAberto from './ServicoAberto';
 import Servicos from './Servicos';
+import ProjFinalizado from '../components/ProjFinalizado'
+import DetalhamentoProj from './DetalhamentoProj';
+import AdicionarProjeto from './AdicionarProjeto';
+import ModalAddServico from '../commons/ModalAddServico';
+import AdicionarServico from './AdicionarServico';
 
 export class Rotas extends Component {
     render() {
@@ -20,11 +27,17 @@ export class Rotas extends Component {
                     <Route exact path="/opcoescadastro" component={CadastroPage2}></Route>
                     <Route exact path="/contratarplano" component={CadastroPage3}></Route>
                     <Route exact path="/servicos" component={Servicos}></Route>
-                    </Switch>
+                    <Route exact path="/detalheservico" component={ServicoAberto}></Route>
+                    <Route exact path="/projetos" component={Projetos}></Route>
+                    <Route exact path="/projetosfinalizados" component={ProjFinalizado}></Route>
+                    <Route exact path="/detalheprojeto" component={DetalhamentoProj}></Route>
+                    <Route exact path="/adicionarprojeto" component={AdicionarProjeto}></Route>
+                    <Route exact path="/adicionarservico" component={AdicionarServico}></Route>
+                </Switch>
                 </BrowserRouter>
             </div>
         )
     }
 }
 
-export default Rotas
+export default Rotas;

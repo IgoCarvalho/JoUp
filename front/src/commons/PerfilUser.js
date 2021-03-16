@@ -8,7 +8,15 @@ export class PerfilUser extends Component {
         return (
             <div className="PerfilUser">
                 <button className="notificacao"><AiOutlineBell/></button>
-                <button className="avatar"><AiOutlineUser/></button>
+                <div className="dropdownPerfil">
+                    <button className="avatar"><AiOutlineUser/></button>
+                    <div className="dropdownPerfilContent">
+                        <span>Meu Perfil</span>
+                        <span>Minha conta</span>
+                        <span>Configurações</span>
+                        <span>Sair</span>
+                    </div>
+                </div>
             </div>
         )
     }
