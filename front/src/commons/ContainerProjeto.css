@@ -1,0 +1,164 @@
+.ContainerProjeto{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 120px 0 0;
+    flex-direction: column;
+    
+}
+
+
+.ContainerProjeto h2{
+    color: #7f529a;
+}
+.topSessao{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 100%;
+    padding: 8.3em 0 25px 0;
+}
+.topSessao button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topSessao button i{
+    position: relative;
+    top:1px;
+    margin: 0 5px;
+    font-size: 15px;
+    color: black;
+}
+.topSessao h2{
+    display: flex;
+    margin: 0 8px 0 0;
+}
+.CardsContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-top: 1px solid  #B2B2B2;
+    margin: 0;
+    padding:20px 0 100% 0;
+}
+.listaProjetos{
+    display: flex;
+    justify-content:left;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.listaProjetos li{
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-size: 13px;
+    margin:10px auto;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px 15px 0 0;
+    text-align: left;
+    position: relative;
+    color: black;
+}
+
+.listaProjetos .progressoProjeto{
+    background-color: rgb(221, 221, 221);
+    border-radius: 50px;
+    position: relative;
+}
+
+.listaProjetos  .progressoRoxo{
+    background-color: #7f529a;
+    border-radius: 50pt;
+    width: 80%;
+}
+
+.listaProjetos li div label{
+    text-align: left;
+    background-color: rgb(235, 235, 235);
+    margin:0 10px 0 0;
+    font-family: 'Nunito Sans Regular';
+    font-size: 12px;
+    padding: 4px 13px;
+    border-radius: 10pt;
+}
+
+.listaProjetos div{
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+.dropdownbutton {
+    color: #7f529a;
+    background-color: transparent;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdownbutton i{
+    color: #7f529a;
+}
+
+.dropdown {
+    position: relative;
+    display: flex;
+    margin: 0;
+}
+.dropdowncontent i{
+    color: #7f529a;
+}
+
+.dropdowncontent {
+    display: none;
+    position: absolute;
+    top: 40px;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+  .dropdowncontent span {
+    color: #7f529a;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer
+  }
+  
+.dropdowncontent span:hover {background-color: #f1f1f1}
+  
+.dropdown:hover .dropdowncontent {
+    display: block;
+}
+  
+.dropdown:hover .dropdownbutton {
+    background-color: none;
+    
+}
+
+.tituloProjeto{
+    padding-bottom: 25px;
+    font-weight: lighter;
+}
+
+div .tagsProjetos{
+    padding-top: 20px;
+}
+
+.listaProjetos li i{
+    color: black;
+    font-size: 16px;
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+.opcoesProjetoBotao{
+    display: flex;
+    align-items: center;
+}

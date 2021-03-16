@@ -12,7 +12,7 @@ export class BotoesCadastro extends Component {
                 <form>
                     <h4>O que você deseja fazer?</h4>
                     <button className="bRoxoRedondo"><Link to="">Realizar teste grátis</Link></button><br/>
-                    <button className="bRoxoRedondo"><Link to="">Contratar plano</Link></button>
+                    <button className="bRoxoRedondo"><Link to="contratarplano">Contratar plano</Link></button>
                 </form>
             </div>
         )

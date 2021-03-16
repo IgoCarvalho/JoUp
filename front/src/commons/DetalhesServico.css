@@ -1,0 +1,176 @@
+.ContainerServico .topSessao{
+    border-bottom: 1px solid #B6B6B5;
+    padding-bottom: 15px;
+    margin-bottom: 2em;
+}
+
+
+ .SessoesServico{
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+     padding: 0 0 4em 0;
+ }
+
+ .conteudoServico{
+    display: flex;
+    background-color: white;
+    padding: 2em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    margin: 0;
+    width: 650px;
+}
+.SessoesServico h2{
+    border-bottom: 1px solid #B6B6B5;
+    font-family: 'Source Sans SemiBold';
+    font-size: 18px;
+    padding-bottom: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.NunericOptions input{
+    padding: 0;
+    width: 15px;
+    margin: 0 10px 0 -3px;
+    height: 42px;
+    font-family: 'Nunito Sans Regular';
+    font-size: 13px;
+}
+.NunericOptions .preco input{
+    width: 60px;
+}
+
+.NunericOptions .tempo input{
+    width: 60px;
+}
+
+
+.NunericOptions input:disabled{
+    background: #F7F7F7;
+    border: 1px solid #C1C0C0;
+}
+.NunericOptions label{
+    background: #F7F7F7;
+    border: 1px solid #C1C0C0;
+    box-sizing: border-box;
+    border-radius: 3.5px 0px 0px 3.5px;
+    padding: 10px;
+    margin: 0;
+}
+.NunericOptions legend{
+    text-align: left;
+    color: #7f529a;
+    font-family: 'Nunito Sans Regular';
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.InputsNumeric{
+    display: flex;
+    margin: 5px 0 0 0;
+    align-items: center;
+}
+.infoServico{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding:0;
+    margin-right: 2em;
+    width: 300px;
+    
+}
+
+.infoServico ul{
+    padding: 0;
+    margin: 0;
+}
+.SessoesServico p {
+    font-family: 'Nunito Sans Regular';
+    font-size: 13px;
+}
+.infoServico li {
+    font-family: 'Nunito Sans Regular';
+    font-size: 13px;
+    margin:0 15px;
+}
+
+.precosPrazos{
+    padding: 0;
+}
+.precosPrazos table{
+    margin-bottom: 10px;
+}
+.filtros{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 2em 0 0 0;
+}
+.filtros ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+.filtros label{
+    text-align: left;
+    background-color: rgb(235, 235, 235);
+    margin:0 10px 0 0;
+    font-family: 'Nunito Sans Regular';
+    color: black;
+    font-size: 13px;
+    padding: 4px 13px;
+    border-radius: 10pt;
+}
+.referencias {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    margin: 2em 0 0 0;
+}
+.referencias ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+.referencias li{
+    background-color: rgb(235, 235, 235);
+    border-radius: 50pt;
+    padding: 4px 13px;
+    font-size: 15px;
+    margin: 0 5px;
+}
+.referencias li a{
+    color: #333333;
+}
+.referencias li i{
+    color: #333333;
+    position: relative;
+    top: 2px;
+    margin: 0 5px;
+    font-size: 15px;
+}
+
+
+.perguntasServico{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding:2em ;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    margin: 0 0 0 2em;
+    text-align: left;
+}
+.perguntasServico p{
+    margin: 0;
+    padding: 0;
+}
+.perguntasServico h2{
+    margin-bottom: 10px;
+}

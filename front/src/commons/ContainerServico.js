@@ -1,48 +1,65 @@
 import React, { Component } from 'react';
 import '../commons/ContainerServico.css';
+import { FaPlus } from "react-icons/fa";
 import { AiOutlinePlus } from "react-icons/ai";
 import '../commons/BotaoRoxo.css';
+import { Link } from 'react-router-dom';
 
-export class ContainerServico extends Component {
+export class ContainerServico extends Component { 
     render() {
         return (
             <div className="ContainerServico">
                 <div className="topSessao">
                     <h2>Serviços ofertados</h2>
-                    <button className="bRoxoRedondo"><i><AiOutlinePlus/></i>Adicionar serviço</button>
+                    <button className="bRoxoRedondo"><Link to="adicionarservico"><i><FaPlus/></i>Adicionar serviço</Link></button>
                 </div><div className="CardsContainer">
                     <ul className="listaServicos">
-                            <li>
+                            <li><Link to="">
                                 <h3>Criação de interface para sites e aplicativos</h3>
                                 <div><label>Design</label><label>UX</label><label>IHC</label></div>
+                                </Link>
                             </li>
-                            <li>
-                                <h3>Identidade Visual</h3>
-                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
-                            </li>
-                            <li>
-                                <h3>Cartão de visitas</h3>
-                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
-                            </li>
-                            <li>
-                                <h3>Animação de logo</h3>
-                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
-                            </li>
-                            <li>
-                                <h3>Consultoria de design para redes sociais</h3>
-                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
-                            </li>
-                            <li>
-                                <h3>Edição de vídeos de data comemorativa</h3>
-                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
-                            </li>
-                            <li>
-                                <h3>Criação de paleta de cores</h3>
-                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
-                            </li>
-                            <li>
+                            <li><Link to="">
                                 <h3>Criação de interface para sites e aplicativos</h3>
                                 <div><label>Design</label><label>UX</label><label>IHC</label></div>
+                                </Link>
+                            </li>
+                            <li><Link to="">
+                                <h3>Criação de interface para sites e aplicativos</h3>
+                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
+                                </Link>
+                            </li>
+                            <li><Link to="">
+                                <h3>Criação de interface para sites e aplicativos</h3>
+                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
+                                </Link>
+                            </li>
+                            <li><Link to="">
+                                <h3>Criação de interface para sites e aplicativos</h3>
+                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
+                                </Link>
+                            </li>
+                            <li><Link to="">
+                                <h3>Criação de interface para sites e aplicativos</h3>
+                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
+                                </Link>
+                            </li>
+                            <li><Link to="">
+                                <h3>Criação de interface para sites e aplicativos</h3>
+                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
+                                </Link>
+                            </li><li><Link to="">
+                                <h3>Criação de interface para sites e aplicativos</h3>
+                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
+                                </Link>
+                            </li><li><Link to="">
+                                <h3>Criação de interface para sites e aplicativos</h3>
+                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
+                                </Link>
+                            </li><li><Link to="">
+                                <h3>Criação de interface para sites e aplicativos</h3>
+                                <div><label>Design</label><label>UX</label><label>IHC</label></div>
+                                </Link>
                             </li>
                         </ul>
                     </div>

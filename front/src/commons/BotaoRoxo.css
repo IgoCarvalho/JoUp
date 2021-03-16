@@ -28,10 +28,17 @@
     font-family: 'Nunito Sans Regular';
     cursor: pointer;
 }
+.bRoxoRedondo:disabled{
+    opacity: 0.5;
+}
 
 .bRoxoRedondo:hover{
     background-color: #633F78;
 }
 .bRoxoRedondo:active{
     background-color: #A580BC;
+}
+
+.bRoxoRedondo i{
+    color:white;
 }
