@@ -7,6 +7,7 @@ const usersRouter = Router();
 
 usersRouter.post('/signup', usersController.signup);
 usersRouter.post('/login', usersController.login);
+usersRouter.get('/get/:username', usersController.getByUsername);
 usersRouter.use(authMiddleware);
 usersRouter.put('/update-plan', usersController.updatePlan);
 

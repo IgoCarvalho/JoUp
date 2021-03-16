@@ -79,5 +79,15 @@ module.exports = {
       res.status(500).json({ error });
     }
   },
-  //TODO => get user by username > user and services
+  async getByUsername(req, res) {
+    const { username } = req.params;
+
+    try {
+      const user = await userModel
+        .findOne({ username: username })
+        .populate('services');
+
+      res.json(user);
+    } catch (error) {}
+  },
 };

@@ -32,6 +32,12 @@ const UserSchema = new mongoose.Schema(
       signatureDate: { type: Date },
       key: { type: String, enum: ['premium', 'complete', 'basic', 'free'] },
     },
+    services: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Service',
+      },
+    ],
   },
   {
     timestamps: true,
