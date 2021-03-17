@@ -12,7 +12,8 @@ export class ContainerServico extends Component {
                 <div className="topSessao">
                     <h2>Serviços ofertados</h2>
                     <button className="bRoxoRedondo"><Link to="adicionarservico"><i><FaPlus/></i>Adicionar serviço</Link></button>
-                </div><div className="CardsContainer">
+                </div>
+                <div className="CardsContainer">
                     <ul className="listaServicos">
                             <li><Link to="">
                                 <h3>Criação de interface para sites e aplicativos</h3>

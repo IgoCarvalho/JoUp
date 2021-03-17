@@ -4,7 +4,6 @@
     align-items: flex-start;
     padding: 0 120px 0 0;
     flex-direction: column;
-    
 }
 
 
@@ -16,7 +15,9 @@
     justify-content: space-between;
     align-items:center;
     width: 100%;
-    padding: 8.3em 0 25px 0;
+    padding: 8.3em 0 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #b2b2b2;
 }
 .topSessao button{
     display: flex;
@@ -56,13 +57,14 @@
     justify-content: flex-start;
     flex-direction: column;
     font-size: 13px;
-    margin:10px auto;
+    margin:10px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px 15px 0 0;
     text-align: left;
     position: relative;
     color: black;
+    cursor: pointer;
 }
 
 .listaProjetos .progressoProjeto{
@@ -123,13 +125,13 @@
     z-index: 1;
 }
   
-  .dropdowncontent span {
+.dropdowncontent span {
     color: #7f529a;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     cursor: pointer
-  }
+}
   
 .dropdowncontent span:hover {background-color: #f1f1f1}
   

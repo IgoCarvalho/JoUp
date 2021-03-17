@@ -14,9 +14,9 @@ export class FormLogin extends Component {
                     <div className="senha">
                     <input type="password" placeholder="Digite sua senha"/><button><MdVisibilityOff/></button>
                     </div>
-                    <label>Esqueceu a sua senha? <Link to="/">Redefinir</Link></label>
+                    <label>Esqueceu a sua senha? <Link to="redefinirsenha">Redefinir</Link></label>
                     <br/>
-                    <button className="bRoxoRedondo">Entrar</button>
+                    <button className="bRoxoRedondo"><Link to="visaogeral">Entrar</Link></button>
                     <fieldset>
                     <legend>ou</legend>
                     <button className="bRoxoRedondo"><i><FcGoogle/></i> Entrar com o Google</button>

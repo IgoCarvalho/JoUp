@@ -9,7 +9,7 @@ export class CadastroUsuario extends Component {
             <div className="containerConta">
                 <LogoMax/>
                 <h2>Cadastro</h2>
-                <label>Já possui conta? <Link to="login">Entrar</Link></label>
+                <label>Já possui conta?<Link to="login"> Entrar</Link></label>
                 <FormCadastro/>
             </div>
         )
