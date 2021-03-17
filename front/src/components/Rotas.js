@@ -14,7 +14,10 @@ import DetalhamentoProj from './DetalhamentoProj';
 import AdicionarProjeto from './AdicionarProjeto';
 import ModalAddServico from '../commons/ModalAddServico';
 import AdicionarServico from './AdicionarServico';
-
+import VisaoGeral from './VisaoGeral';
+import RedefinirSenha from './RedefinirSenha';
+import RedefinirSenhaPage2 from './RedefinirSenhaPage2';
+ 
 export class Rotas extends Component {
     render() {
         return (
@@ -33,6 +36,9 @@ export class Rotas extends Component {
                     <Route exact path="/detalheprojeto" component={DetalhamentoProj}></Route>
                     <Route exact path="/adicionarprojeto" component={AdicionarProjeto}></Route>
                     <Route exact path="/adicionarservico" component={AdicionarServico}></Route>
+                    <Route exact path="/visaogeral" component={VisaoGeral}></Route>
+                    <Route exact path="/redefinirsenha" component={RedefinirSenha}></Route>
+                    <Route exact path="/codredefinirsenha" component={RedefinirSenhaPage2}></Route>
                 </Switch>
                 </BrowserRouter>
             </div>

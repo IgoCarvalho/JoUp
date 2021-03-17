@@ -31,7 +31,7 @@ export class FormLogin extends Component {
     login(credential, password)
       .then(() => {
         console.log('logado');
-        history.push('/servicos');
+        history.push('visaogeral');
       })
       .catch((errorMessage) => {
         this.setState({ submitting: false });
@@ -65,7 +65,7 @@ export class FormLogin extends Component {
             </button>
           </div>
           <label>
-            Esqueceu a sua senha? <Link to="/">Redefinir</Link>
+            Esqueceu a sua senha? <Link to="redefinirsenha">Redefinir</Link>
           </label>
           <br />
           <button disabled={this.state.submitting} className="bRoxoRedondo">
