@@ -5,7 +5,8 @@
 }
 .PerfilUser .avatar{
     background: #F9F0FF;
-    padding:10px;
+    padding:0;
+    width: 40px;
     display: flex;
     border-radius: 50pt;
     border: none;
@@ -55,8 +56,11 @@
     text-decoration: none;
     display: block;
     cursor: pointer
-  }
-  
+}
+.dropdownPerfilContent span a {
+    color: #7f529a;
+}
+
 .dropdownPerfilContent span:hover {background-color: #f1f1f1}
   
 .dropdownPerfil:hover .dropdownPerfilContent {

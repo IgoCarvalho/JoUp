@@ -8,7 +8,7 @@ const servicesRouter = Router();
 
 servicesRouter.use(authMiddleware);
 servicesRouter.post('/', servicesController.create);
-
+servicesRouter.get('/', servicesController.getAll);
 servicesRouter.get('/get/:serviceId', servicesController.getOne);
 servicesRouter.put('/update/:serviceId', servicesController.update);
 

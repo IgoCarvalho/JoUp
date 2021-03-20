@@ -21,7 +21,6 @@ export class ContainerProjeto extends Component {
                                 <span>Prazo</span>
                             </div>    
                         </div>
-                        <button className="bRoxoRedondo"><Link to="adicionarprojeto"><i><FaPlus/></i>Adicionar projeto</Link></button>
                     </div>
 
                 </div>

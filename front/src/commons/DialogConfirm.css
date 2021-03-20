@@ -1,0 +1,47 @@
+.app-dialog {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 350px;
+}
+
+.app-dialog > h2 {
+  color: #7f529a;
+  font-size: 18px;
+  padding: 0;
+}
+
+.app-dialog > p {
+  color: #333333;
+  text-align: initial;
+  margin: 10px 0;
+}
+
+.app-dialog .actions-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.actions-container .actino-btn{
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  border-radius: 50pt;
+  border: 1px solid transparent;
+  padding: 10px 25px;
+  margin: 0;
+  font-family: 'Nunito Sans Regular';
+  cursor: pointer;
+}
+.actions-container .actino-btn + .actino-btn {
+  margin-left: 5px;
+}
+
+.actions-container .actino-btn.success {
+  background: #3CB080;
+  color: white;
+}
+.actions-container .actino-btn.cancel {
+  background: #fff;
+  color: #7f529a;
+  border-color: #7f529a;
+}

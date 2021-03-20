@@ -1,17 +1,79 @@
-.ContainerModalServico{
+.ContainerAddServico{
     padding: 8em 18%;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.815);
-    z-index: 200;
 }
-.ContainerModalServico h2{
+
+.Toastify__toast-container {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+.Toastify__toast-container .Toastify__toast--success {
+    background-color: #3CB080;
+}
+.Toastify__toast-container .Toastify__toast--error {
+    background-color: #E54348;
+}
+.Toastify__toast-container .Toastify__toast-body {
+    width: 100%;
+}
+
+.message-dialog {
+    /* height: 200px; */
+    width: 100%;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.message-dialog.success {
+    color: #fff;
+}
+.message-dialog > img {
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.TextEditorContainer {
+    padding: 10px;
+}
+
+.filtros-container {
+    text-align: initial;
+    padding: 10px;
+    width: 100%;
+}
+
+.referencias-container {
+    width: 100%;
+    padding: 0 10px;
+}
+.referencias-container .referencias-item {
+    display: flex;
+    align-items: center;
+}
+.referencias-item input {
+    width: 100%;
+}
+.referencias-item .delete-btn {
+    background: #E54348;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.ContainerAddServico h2{
     color: #7f529a;
     font-size: 18px;
     font-family: 'Source Sans SemiBold';
     text-align: left;
     padding: 0 10px;
 }
-.ContainerModalServico sup{
+.ContainerAddServico sup{
     margin: 0;
     padding: 0;
     position: relative;
@@ -27,7 +89,7 @@
     background: none;
     border: none;
 }
-.ContainerModalServico ul {
+.ContainerAddServico ul {
     list-style: none;
 }
 .cabecalhoServico {
@@ -44,7 +106,7 @@
     padding: 0 0 10px 0;
 }
 
-.ModalServico{
+.AddServico{
     background-color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
@@ -65,8 +127,14 @@
     justify-content: flex-start;
     padding: 0;
 }
+
+.camposTexto {
+    width: 65%;
+}
+
 .camposPreco{
     padding:0  2em;
+    width: 35%;
 }
 .camposPreco i{
     color: black;
@@ -124,6 +192,19 @@
 .numericInputs input{
     margin: 0 0 0 -1px;
     border-radius: 0px 3.5px 3.5px 0px;
+    width: 60px;
+    text-align: center;
+}
+/* Chrome, Safari, Edge, Opera */
+.numericInputs input::-webkit-outer-spin-button,
+.numericInputs input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.numericInputs input {
+  -moz-appearance: textfield;
 }
 
 .SubmitOptions{
@@ -150,7 +231,7 @@
     color: white;
     border: none;
     padding: 8px 25px;
-    margin: 0 0 0 10px;
+    margin: 0 10px;
     font-family: 'Nunito Sans Regular';
     cursor: pointer;
 }

@@ -1,4 +1,5 @@
 const { hash, compare } = require('bcrypt');
+const slugify = require('slugify');
 const omitKeys = require('../utils/omitKeys');
 const jwt = require('../utils/jwt');
 
@@ -6,9 +7,14 @@ const userModel = require('../models/User');
 
 module.exports = {
   async signup(req, res) {
-    const { name, username, email, password } = req.body;
+    const { name, email, password } = req.body;
 
     try {
+      const username = slugify(`${name} ${Date.now()}`, { lower: true });
+
+      const avatarName = String(name).trim().replace(' ', '+')
+      const avatar_url = `https://ui-avatars.com/api/?background=7F529A&color=fff&name=${avatarName}`
+
       const hashedPassword = await hash(password, 10);
 
       const newUser = await userModel.create({
@@ -16,6 +22,7 @@ module.exports = {
         username,
         email,
         password: hashedPassword,
+        avatar_url
       });
 
       const token = jwt.sign({ user: newUser._id });
@@ -89,5 +96,17 @@ module.exports = {
 
       res.json(user);
     } catch (error) {}
+  },
+  async silentLogin(req, res) {
+    const id = req.auth;
+
+    try {
+      const user = await userModel.findById(id);
+
+      res.json({ user: omitKeys(user, 'password') });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error });
+    }
   },
 };

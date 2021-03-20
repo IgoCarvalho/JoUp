@@ -10,39 +10,26 @@ import { AiOutlineBold,AiOutlineOrderedList, AiOutlineUnorderedList,AiOutlineIta
 
 export class DetalhesServico extends Component {
     render() {
+        if(!this.props.service) {
+            return (<div>carregando...</div>)
+        }
+
+        console.log(this.props.service);
+        
         return (
             <div className="ContainerServico">
                 <div className="topSessao">
-                    <h2>Serviços ofertados / <strong>Título do serviço</strong></h2>
-                    <button className="bRoxoRedondo"><Link to="adicionarservico"><i><FiEdit/></i>Editar serviço</Link></button>
+                    <h2>Serviços ofertados / <strong>{this.props.service?.titulo}</strong></h2>
+                    <button className="bRoxoRedondo"><Link to={`/editarservico/${this.props.service._id}`}><i><FiEdit/></i>Editar serviço</Link></button>
                 </div>
                 <section className="SessoesServico">
                     <div className="conteudoServico">
                         <div className="infoServico">
                             <h2>Detalhamento do serviço</h2>
-                            <strong><p>Objetivos e benefícios do serviço:</p></strong>
-                            <p>Este serviço tem como objetivo contribuir para ...  gerando os benefícios tais em relação ao problema 
-                            a ser solucionado. Este serviço tem como objetivo contribuir para ...  gerando os benefícios tais em relação ao problema a ser solucionado.</p>
-                            <p>Este serviço tem como objetivo contribuir para ...  gerando os benefícios tais em relação ao problema 
-                            a ser solucionado. Este serviço tem como objetivo contribuir para ...  gerando os benefícios tais em relação ao problema a ser solucionado.</p>
+                            <div dangerouslySetInnerHTML={{__html: this.props.service.detalhes}}  />
+                            
                             <h2>Requisitos para o serviço</h2>
-                            <strong><p>Natureza do projeto:</p></strong>
-                            <ul>
-                                <li>Quais os objetivos básicos do projeto?</li>
-                                <li>Quais resultados desejáveis?</li>
-                                <li>Por que esse projeto tornou-se necessário?</li>
-                                <li>Por que agora?</li>
-                            </ul>
-                            <strong><p>Análise de mercado:</p></strong>
-                            <ul>
-                                <li>Qual o segmento e o nicho do seu negócio? (Exemplo: moda - bijuterias)</li>
-                                <li>Quais os seus concorrentes e/ou produtos similares?</li>
-                            </ul>
-                            <strong><p>Público-alvo:</p></strong>
-                            <ul>
-                                <li>Quem esse projeto deve atingir?</li>
-                                <li>Qual experiência o projeto espera proporcionar?</li>
-                            </ul>
+                            <div dangerouslySetInnerHTML={{__html: this.props.service.requisitos}}  />
                         </div>
                         <div className="precosPrazos">
                         <h2>Faixa de preço</h2>
@@ -51,13 +38,13 @@ export class DetalhesServico extends Component {
                             <td>
                                 <legend>No mínimo</legend>
                                 <div className="InputsNumeric">
-                                <td><label>R$</label></td><td><input type="numeric" disabled/></td>
+                                <td><label>R$</label></td><td><input type="numeric" value={this.props.service.faixa_de_preco?.min} disabled/></td>
                                 </div>
                             </td>
                             <td>
                                 <legend>No mínimo</legend>
                                 <div className="InputsNumeric">
-                                <td><label>R$</label></td><td><input type="numeric" disabled/></td>
+                                <td><label>R$</label></td><td><input type="numeric" value={this.props.service.faixa_de_preco?.max} disabled/></td>
                                 </div>
                             </td>
                         </tr>
@@ -68,13 +55,13 @@ export class DetalhesServico extends Component {
                             <td>
                                 <legend>No mínimo</legend>
                                 <div className="InputsNumeric">
-                                <td><label>Semanas</label></td><td><input type="numeric" disabled/></td>
+                                <td><label>Semanas</label></td><td><input type="numeric" value={this.props.service.faixa_de_tempo?.min} disabled/></td>
                                 </div>
                             </td>
                             <td>
                                 <legend>No mínimo</legend>
                                 <div className="InputsNumeric">
-                                <td><label>Semanas</label></td><td><input type="numeric" disabled/></td>
+                                <td><label>Semanas</label></td><td><input type="numeric" value={this.props.service.faixa_de_tempo?.max} disabled/></td>
                                 </div>
                             </td>
                         </tr>
@@ -82,20 +69,32 @@ export class DetalhesServico extends Component {
                         <div className="filtros">
                         <h2>Filtros</h2>
                         <ul>
-                            <li><label>Design</label></li>
+                            {
+                                this.props.service.filtros?.map((filtro) => (
+                                    <li key={filtro}><label>{filtro}</label></li>
+                                ))
+                            }
+                            {/* <li><label>Design</label></li>
                             <li><label>IHC</label></li>
-                            <li><label>UX</label></li>
+                            <li><label>UX</label></li> */}
                         </ul>
                         </div>
                         <div className="referencias">
                         <h2>Referencias do serviço</h2>
                         <ul>
-                            <li><label><a href="" target="_blank"><i><AiOutlineLink/></i>Google Drive</a></label></li>
-                            <li><label><a href="" target="_blank"><i><AiOutlineLink/></i>Vídeo do Youtube</a></label></li><br/>
+                            {
+                                this.props.service.referencias?.map((referencia) => (
+                                    <li key={referencia._id}>
+                                        <label><a href={referencia.link} target="_blank"><i><AiOutlineLink/></i>{referencia.nome}</a></label>
+                                    </li>
+                                ))
+                            }
+                            {/* <li><label><a href="" target="_blank"><i><AiOutlineLink/></i>Google Drive</a></label></li>
+                            <li><label><a href="" target="_blank"><i><AiOutlineLink/></i>Vídeo do Youtube</a></label></li><br/> */}
                         </ul>
-                        <ul>
+                        {/* <ul>
                             <li><label><a href="" target="_blank"><i><AiOutlineLink/></i>https://determined-no...</a></label></li>
-                        </ul>
+                        </ul> */}
                         </div>
                         
                         </div>
@@ -103,15 +102,8 @@ export class DetalhesServico extends Component {
 
 
                     <div className="perguntasServico">
-                    <h2>Perguntas Frequentes</h2>
-                    <strong><p>Porquê isso é necessário para meu site?</p></strong>
-                    <p>Os conceitos de UI e UX geram um maravilhoso desempenho para quem for utilizar as propriedades de sua interface.</p><br/>
-                    <strong><p>Porquê isso é necessário para meu site?</p></strong>
-                    <p>Os conceitos de UI e UX geram um maravilhoso desempenho para quem for utilizar as propriedades de sua interface.</p><br/>
-                    <strong><p>Porquê isso é necessário para meu site?</p></strong>
-                    <p>Os conceitos de UI e UX geram um maravilhoso desempenho para quem for utilizar as propriedades de sua interface.</p><br/>
-                    <strong><p>Porquê isso é necessário para meu site?</p></strong>
-                    <p>Os conceitos de UI e UX geram um maravilhoso desempenho para quem for utilizar as propriedades de sua interface.</p><br/>
+                        <h2>Perguntas Frequentes</h2>
+                        <div dangerouslySetInnerHTML={{__html: this.props.service.perguntas}} />
                     </div>
                 </section>  
             </div> 

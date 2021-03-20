@@ -16,7 +16,19 @@ module.exports = {
         $push: { services: newService._id },
       });
 
-      res.status(201).json(newService);
+      res.status(201).json({ service: newService });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ error });
+    }
+  },
+  async getAll(req, res) {
+    const id = req.auth;
+
+    try {
+      const services = await ServiceModel.find({ user: id });
+
+      res.json({ services });
     } catch (error) {
       console.log(error);
       res.status(500).json({ error });
@@ -28,7 +40,7 @@ module.exports = {
     try {
       const service = await ServiceModel.findById(serviceId);
 
-      res.json(service);
+      res.json({ service });
     } catch (error) {
       console.log(error);
       res.status(500).json({ error });
@@ -39,13 +51,13 @@ module.exports = {
     const serviceData = req.body;
 
     try {
-      const updated = await ServiceModel.findByIdAndUpdate(
+      const service = await ServiceModel.findByIdAndUpdate(
         serviceId,
         serviceData,
         { new: true }
       );
 
-      res.json(updated);
+      res.json({ service });
     } catch (error) {
       console.log(error);
       res.status(500).json({ error });

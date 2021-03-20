@@ -9,7 +9,7 @@ export class Funcionalidades extends Component {
     render() {
         return (
             <section className="funcionalidades" id="funcionalidades">
-                <h2>Proporcinamos uma experiência única para você e os seus cliente</h2>
+                <h2>Proporcionamos uma experiência única para você e os seus clientes</h2>
                 <br/>
                 <ul className="textos3">
                     <li className="acompanhamento">

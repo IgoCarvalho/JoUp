@@ -17,7 +17,7 @@ export class VisaoGeral extends Component {
         return (
             <div className="projetos">
                 <NavPerfil abrirMenu={this.abreMenu}/>
-                <AsideMenu menu={this.state.menu}/>
+                <AsideMenu page="visaogeral" menu={this.state.menu}/>
                 <ContainerVisaoGeral/>
             </div>
         )

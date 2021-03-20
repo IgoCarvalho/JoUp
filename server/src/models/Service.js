@@ -36,10 +36,10 @@ const ServiceSchema = new Schema(
       type: [String],
       required: false,
     },
-    referencias: {
-      type: [String],
-      required: false,
-    },
+    referencias: [{
+      nome: {type: String, require: true},
+      link: {type: String, require: true},
+    }],
   },
   { timestamps: true }
 );

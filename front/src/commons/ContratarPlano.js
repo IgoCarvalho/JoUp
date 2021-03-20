@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import '../commons/ContratarPlano.css';
 import Planos from '../commons/Planos';
 import ListaPlanos from './ListaPlanos';
@@ -6,6 +8,8 @@ import LogoMax from './LogoMax';
 import PlanoBasico from './PlanoBasico';
 import PlanoCompleto from './PlanoCompleto';
 import PlanoPremium from './PlanoPremium';
+
+import { fetchPlan } from '../store/actions/userActions';
 
 export class ContratarPlano extends Component {
 
@@ -20,6 +24,18 @@ export class ContratarPlano extends Component {
 
     selectPlano = (planoKey) => {
         this.setState({ ...this.planos, planoSelecionado: planoKey })
+    }
+
+    contractPlan = () => {
+
+        const { fetchPlan: plan, history } = this.props;
+
+        plan(this.state.planoSelecionado)
+            .then(() => {
+                console.log('deu certo');
+                history.push('/visaogeral')
+            })
+        
     }
     
     render() {
@@ -43,11 +59,14 @@ export class ContratarPlano extends Component {
                 </ListaPlanos>
                 
                 <div className="bNext">
-                    <button disabled={!this.state.planoSelecionado} className="bRoxoRedondo" onClick={() => {alert('ola')}}>Próximo</button>
+                    <button disabled={!this.state.planoSelecionado} className="bRoxoRedondo" onClick={this.contractPlan}>Próximo</button>
                 </div>
             </div>
         )
     }
 }
 
-export default ContratarPlano;
+const mapDispatchToProps = { fetchPlan };
+
+
+export default withRouter(connect(undefined, mapDispatchToProps)(ContratarPlano));

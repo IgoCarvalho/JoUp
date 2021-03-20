@@ -1,0 +1,10 @@
+.CustomTextEditor .public-DraftEditor-content {
+  min-height: 120px;
+  font-family: 'Nunito Sans Regular';
+  font-size: 13px;
+  padding: 15px;
+}
+
+.CustomTextEditorTollbar {
+  text-align: left;
+}

@@ -12,11 +12,14 @@ import Servicos from './Servicos';
 import ProjFinalizado from '../components/ProjFinalizado'
 import DetalhamentoProj from './DetalhamentoProj';
 import AdicionarProjeto from './AdicionarProjeto';
-import ModalAddServico from '../commons/ModalAddServico';
 import AdicionarServico from './AdicionarServico';
 import VisaoGeral from './VisaoGeral';
 import RedefinirSenha from './RedefinirSenha';
 import RedefinirSenhaPage2 from './RedefinirSenhaPage2';
+import MeuPerfil from './MeuPerfil';
+import MinhaConta from './MinhaConta';
+
+import CustomRoute from './CustomRoute';
  
 export class Rotas extends Component {
     render() {
@@ -24,21 +27,24 @@ export class Rotas extends Component {
             <div>
                 <BrowserRouter>
                 <Switch>
-                    <Route exact path="/" component={Home}></Route>
-                    <Route exact path="/login" component={Login}></Route>
-                    <Route exact path="/cadastro" component={Cadastro}></Route>
-                    <Route exact path="/opcoescadastro" component={CadastroPage2}></Route>
-                    <Route exact path="/contratarplano" component={CadastroPage3}></Route>
-                    <Route exact path="/servicos" component={Servicos}></Route>
-                    <Route exact path="/detalheservico" component={ServicoAberto}></Route>
-                    <Route exact path="/projetos" component={Projetos}></Route>
-                    <Route exact path="/projetosfinalizados" component={ProjFinalizado}></Route>
-                    <Route exact path="/detalheprojeto" component={DetalhamentoProj}></Route>
-                    <Route exact path="/adicionarprojeto" component={AdicionarProjeto}></Route>
-                    <Route exact path="/adicionarservico" component={AdicionarServico}></Route>
-                    <Route exact path="/visaogeral" component={VisaoGeral}></Route>
-                    <Route exact path="/redefinirsenha" component={RedefinirSenha}></Route>
-                    <Route exact path="/codredefinirsenha" component={RedefinirSenhaPage2}></Route>
+                    <CustomRoute exact path="/" component={Home}></CustomRoute>
+                    <CustomRoute exact path="/login" component={Login}></CustomRoute>
+                    <CustomRoute exact path="/cadastro" component={Cadastro}></CustomRoute>
+                    <CustomRoute privated exact path="/opcoescadastro" component={CadastroPage2}></CustomRoute>
+                    <CustomRoute privated exact path="/contratarplano" component={CadastroPage3}></CustomRoute>
+                    <CustomRoute privated exact path="/servicos" component={Servicos}></CustomRoute>
+                    <CustomRoute privated exact path="/detalheservico/:id" component={ServicoAberto}></CustomRoute>
+                    <CustomRoute privated exact path="/projetos" component={Projetos}></CustomRoute>
+                    <CustomRoute privated exact path="/projetosfinalizados" component={ProjFinalizado}></CustomRoute>
+                    <CustomRoute privated exact path="/detalheprojeto" component={DetalhamentoProj}></CustomRoute>
+                    <CustomRoute privated exact path="/adicionarprojeto" component={AdicionarProjeto}></CustomRoute>
+                    <CustomRoute privated exact path="/adicionarservico" component={AdicionarServico}></CustomRoute>
+                    <CustomRoute privated exact path="/editarservico/:id" component={AdicionarServico}></CustomRoute>
+                    <CustomRoute privated exact path="/visaogeral" component={VisaoGeral}></CustomRoute>
+                    <CustomRoute exact path="/redefinirsenha" component={RedefinirSenha}></CustomRoute>
+                    <CustomRoute exact path="/codredefinirsenha" component={RedefinirSenhaPage2}></CustomRoute>
+                    <CustomRoute privated exact path="/perfil" component={MeuPerfil}></CustomRoute>
+                    <CustomRoute privated exact path="/conta" component={MinhaConta}></CustomRoute>
                 </Switch>
                 </BrowserRouter>
             </div>

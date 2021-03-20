@@ -4,9 +4,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.815);
-    z-index: 200;
 }
 .ContainerAddProjeto h2{
     color: #7f529a;

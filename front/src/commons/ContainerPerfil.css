@@ -1,0 +1,158 @@
+.ContainerPerfil{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 120px 0 0;
+    flex-direction: column;
+    width: 100%;
+}
+.ContainerPerfil h2{
+    color: #7f529a;
+}
+
+
+.topSessao{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 100%;
+    padding: 8.3em 0 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #b2b2b2;
+}
+.topSessao button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topSessao button i{
+    position: relative;
+    top:1px;
+    margin: 0 5px;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+}
+.topSessao h2{
+    display: flex;
+    margin: 0 8px 0 0; 
+}
+
+.ContainerPerfilMain{
+    display: flex;
+    justify-content: space-between;
+}
+.ContainerPerfilMain h3{
+    font-size: 22px;
+    text-align: left;
+
+}
+.ContainerPerfilMain p{
+    text-align: left;
+}
+.sectionAvatar{
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding: 2vw;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+}
+.avatarIMG img{
+    border-radius: 100pt;
+    width: 180px;
+    height: 180px;
+}
+.avatarIMG {
+    padding-right: 2vw;
+}
+
+.infoUser{
+    text-align: left;
+}
+.infoUser legend{
+    font-size: 14px;
+}
+.infoUser label{
+    font-size: 14px;
+    color: #787878;
+}
+.infoUser p{
+    font-size: 14px;
+}
+
+.sectionLinkedin, .sectionBehance{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    margin-bottom: 2em;
+    padding: 2vw;
+}
+
+.sectionLinkedin h3{
+    padding: 5px 0;
+    border-bottom: 1px solid #B6B6B5;
+    margin-bottom: 10px;
+}
+
+.sectionBehance h3{
+    padding: 5px 0;
+    border-bottom: 1px solid #B6B6B5;
+    margin-bottom: 10px;
+}
+
+.sectionServicos{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    margin: 0 0 2em 2em;
+    text-align: left;
+    white-space: nowrap;
+    padding: 2vw;
+}
+
+
+.sectionServicos h3{
+    padding: 5px 0;
+    border-bottom: 1px solid #B6B6B5;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.sectionServicos label{
+    font-size: 14px;
+}
+
+.sectionHabilidades {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    margin: 0 0 2em 2em;
+    text-align: left;
+    white-space: nowrap;
+    padding: 2vw;
+}
+
+.sectionHabilidades h3{
+    padding: 5px 0;
+    border-bottom: 1px solid #B6B6B5;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.sectionHabilidades label{
+    font-size: 14px;
+}
+
+.sectionHabilidades .cinza{
+    color: #787878;
+}
+
+.sectionHabilidades .idiomas{
+    width: 100%;
+    font-size: 14px;
+}
+.idiomas .textLang{
+    padding-right: 2vw;
+}

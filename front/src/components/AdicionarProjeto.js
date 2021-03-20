@@ -17,7 +17,7 @@ export class AdicionarProjeto extends Component {
         return (
             <div className="addProjetos">
                 <NavPerfil abrirMenu={this.abreMenu}/>
-                <AsideMenu menu={this.state.menu}/>
+                <AsideMenu page="projetos" menu={this.state.menu}/>
                 <ContainerAdicionarProjeto/>
             </div>
         )
