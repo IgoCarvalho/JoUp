@@ -2,22 +2,30 @@ const plans = {
   premium: {
     name: 'Premium',
     projectsNum: 0,
+    servicesNum: 0,
     expiresTime: 30,
+    socialMediaLink: true,
   },
   complete: {
     name: 'Completo',
     projectsNum: 10,
+    servicesNum: 10,
     expiresTime: 30,
+    socialMediaLink: false,
   },
   basic: {
     name: 'Básico',
-    projectsNum: 5,
+    projectsNum: 3,
+    servicesNum: 5,
     expiresTime: 30,
+    socialMediaLink: false,
   },
   free: {
     name: 'Grátis',
     projectsNum: 1,
+    servicesNum: 1,
     expiresTime: 30,
+    socialMediaLink: false,
   },
 };
 

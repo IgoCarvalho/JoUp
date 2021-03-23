@@ -38,6 +38,10 @@ const UserSchema = new mongoose.Schema(
         ref: 'Service',
       },
     ],
+    socialMediaData: {
+      behance: { type: Map, required: false },
+      linkedin: { type: Map, required: false },
+    }
   },
   {
     timestamps: true,

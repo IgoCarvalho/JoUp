@@ -4,6 +4,7 @@ const omitKeys = require('../utils/omitKeys');
 const jwt = require('../utils/jwt');
 
 const userModel = require('../models/User');
+const socialMediaService = require('../services/socialMediaService');
 
 module.exports = {
   async signup(req, res) {
@@ -12,8 +13,8 @@ module.exports = {
     try {
       const username = slugify(`${name} ${Date.now()}`, { lower: true });
 
-      const avatarName = String(name).trim().replace(' ', '+')
-      const avatar_url = `https://ui-avatars.com/api/?background=7F529A&color=fff&name=${avatarName}`
+      const avatarName = String(name).trim().replace(' ', '+');
+      const avatar_url = `https://ui-avatars.com/api/?background=7F529A&color=fff&name=${avatarName}`;
 
       const hashedPassword = await hash(password, 10);
 
@@ -22,7 +23,7 @@ module.exports = {
         username,
         email,
         password: hashedPassword,
-        avatar_url
+        avatar_url,
       });
 
       const token = jwt.sign({ user: newUser._id });
@@ -102,6 +103,29 @@ module.exports = {
 
     try {
       const user = await userModel.findById(id);
+
+      res.json({ user: omitKeys(user, 'password') });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error });
+    }
+  },
+  async getSocialMeialData(req, res) {
+    const id = req.auth;
+    const { username, socialMedia } = req.body;
+
+    try {
+
+      const data = await socialMediaService[socialMedia](username);
+
+      if (!data) {
+        throw new Error()
+      }
+      const user = await userModel.findById(id);
+
+      user.socialMediaData[socialMedia] = data;
+
+      await user.save();
 
       res.json({ user: omitKeys(user, 'password') });
     } catch (error) {

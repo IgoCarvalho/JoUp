@@ -11,5 +11,6 @@ usersRouter.get('/get/:username', usersController.getByUsername);
 usersRouter.use(authMiddleware);
 usersRouter.post('/me', usersController.silentLogin);
 usersRouter.put('/update-plan', usersController.updatePlan);
+usersRouter.put('/update-social-data', usersController.getSocialMeialData);
 
 module.exports = usersRouter;
