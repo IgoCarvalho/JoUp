@@ -1,14 +1,21 @@
 .ContainerServico{
     display: flex;
-    padding: 0 120px 0 0;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%; 
+    padding: 0 8vw;
+    flex-direction: column; 
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    transition: margin-left 300ms;
 }
+.ContainerServico.open {
+    margin-left: 200px;
+}
+
 .ContainerServico h2{
     color: #7f529a;
 }
 .noservice {
+    padding: 10vh 0; 
     width: 100%;
 }
 .noservice > p {
@@ -46,28 +53,40 @@
     align-items: flex-start;
     border: none;
     margin: 0;
-    padding:0 0 0 0;
+    padding: 0;
 }
 .listaServicos{
-    /* width: 100%; */
+    width: 100%; 
     display: flex;
-    width: 1070px;
-    /* justify-content: space-between; */
+    /*width: 1070px;*/
+    justify-content: space-between; 
     flex-wrap: wrap;
     list-style: none;
-    margin: 0 auto;
     padding: 0;
 }
 .listaServicos li{
-    padding: 20px;
-    margin:10px;
+    padding: 15px;
+    margin:0 1vw 2vw 0;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     text-align: left;
-    width: 14vw;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: normal;
     min-height: 10vh;
+    width: 240px;
     cursor: pointer;
+    position: relative;
+}
+.listaServicos li button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.listaServicos li button i{
+    color: #7f529a;
+    font-size: 20px;
 }
 .listaServicos li > a {
     height: 100%;
@@ -77,6 +96,7 @@
 }
 .listaServicos li h3{
     font-size: 16px;
+    white-space: normal;
 }
 
 .listaServicos li div label{
@@ -99,4 +119,59 @@
 
 .opcoesProjetoBotao button i{
     color: white;
+}
+
+.labelsSection{
+    display: flex;
+    flex-wrap: wrap;
+}
+.topServico{
+    width: 100%;
+    padding-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.dropdownServico {
+    position: absolute;
+    right: 0;
+    display: flex;
+    margin: 0 0 0 20px;
+}
+
+.dropdownServicoContent {
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background-color: #f9f9f9;
+    width: 115px;
+    border-radius: 6px;
+    transition: 0.2s;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+  
+.dropdownServicoContent span {
+    color: #7f529a;
+    padding: 4px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer
+}
+.dropdownServicoContent span a {
+    color: #7f529a;
+}
+
+.dropdownServicoContent span:hover, .dropdownServicoContent span a:hover {background-color: #7f529a; color: white;}
+  
+.dropdownServico:hover .dropdownServicoContent {
+    display: block;
+}
+  
+.dropdownServico:hover .avatar {
+    background-color: none;
+    
 }

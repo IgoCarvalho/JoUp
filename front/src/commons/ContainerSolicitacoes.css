@@ -1,0 +1,209 @@
+.ContainerSolicitacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 4em;
+    flex-direction: column;
+}
+.ContainerSolicitacao .CardsContainer {
+    margin: 0 auto;
+}
+
+.ContainerSolicitacao h2{
+    color: #7f529a;
+}
+.topSessao{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 8.3em 0 25px 0;
+    width: 100%;
+}
+.topSessao button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topSessao button i{
+    position: relative;
+    top:1px;
+    margin: 0 5px;
+    font-size: 15px;
+}
+.topSessao h2{
+    display: flex;
+    margin: 0 10px 0 0;
+}
+
+.listaSolicitacao{
+    display: flex;
+    justify-content:left;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.listaSolicitacao li{
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    text-align: left;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+.listaSolicitacao li div label{
+    text-align: left;
+    background-color: #F7F7F7;
+    border: 1px solid #C1C0C0;
+    color: #919191;
+    margin:0;
+    font-family: 'Nunito Sans Regular';
+    font-size: 16px;
+    padding: 15px 10px 12px 10px;
+    border-radius: 3.5px 0px 0px 3.5px;
+}
+
+.listaSolicitacao li div input{
+    border: 1px solid #C1C0C0;
+    border-radius: 0px 3.5px 3.5px 0px;
+    font-size: 16px;
+    padding: 15px 3px;
+    width: 60px;
+    margin-top: 0;
+    outline: none;
+}
+
+input::placeholder{
+    color: #919191;
+}
+
+.espaco{
+    display: inline-block;
+    align-items: center;
+}
+.infoSolicitacao .espaco {
+    display: flex;
+}
+
+.minmax{
+    color: #7F529A;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.listaSolicitacao div{
+    padding: 0;
+}
+
+.tituloSolicitacao{
+    padding-bottom: 0;
+    font-size: 26px;
+}
+
+div .tagsSolicitacao{
+    padding-top: 20px;
+}
+
+.listaSolicitacao li i{
+    color: black;
+    font-size: 16px;
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+
+.prazoSolicitacao{
+    background-color: #3CB081;
+    border-radius: 20px;
+    color:#FFFFFF;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: fit-content;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.listaSolicitacao h4{
+    font-size: 20px;
+    font-weight: bold;
+    color: #7f529a;
+    border-bottom: 1px solid #b2b2b2;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.listaSolicitacao p{
+    margin-top:5px;
+}
+
+.infoSolicitacao div{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.infoSolicitacao .valoresContainer {
+    display: flex;
+    margin: 0;
+    width: 100%;
+}
+
+.infoSolicitacao .valoresContainer input {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.botaoVerde{
+    background: #3CB080;
+    border-radius: 32px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0;
+    font-family: 'Nunito Sans Regular';
+    cursor: pointer;
+}
+
+.botaoVerde:hover{
+    background-color: #2F8964;
+}
+
+.botaoVerde:active{
+    background-color: #7AD2AD;
+    color: black;
+}
+
+.botaoVermelho{
+    background: #E54348;
+    border-radius: 32px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0;
+    font-family: 'Nunito Sans Regular';
+    cursor: pointer;
+}
+
+.botaoVermelho:hover{
+    background-color: #D22D32;
+}
+.botaoVermelho:active{
+    background-color: #E33137;
+    color:black;
+}
+.botoes{
+    text-align: right;
+    margin-right: 10px;
+}
+.botoes button{
+    margin-left: 16px;
+    margin-top: 30px;
+}
+

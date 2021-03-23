@@ -46,3 +46,13 @@ export const logoutAction = () => {
     console.log('logout');
   };
 };
+
+export const fetchSocialMediaData = (data) => {
+  return async (dispatch) => {
+    const userData = await userService.getSocilMediaData(data);
+
+    dispatch(setUser(userData));
+
+    console.log('fetchSocialMediaData', userData);
+  };
+};

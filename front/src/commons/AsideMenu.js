@@ -18,13 +18,13 @@ export class AsideMenu extends Component {
                             <tr className={`desmarcado ${page === 'calendario' ? 'marcado' : ''}`}><Link to=""><td><i><AiOutlineCalendar/></i></td> <td className="legend">Agenda</td></Link></tr>
                         </table> */}
 
-                        <ul>
-                            <li className={`${page === 'avisaogeral'? 'marcado' : ''}`}>
+                        <ul className="ContainerMenus">
+                            <li className={`${page === 'visaogeral'? 'marcado' : ''}`}>
                                 <Link className="menu-text" to="/visaogeral"><i><AiOutlineEye/></i>
                                     <p>Visão Geral</p>
                                 </Link>
                             </li>
-                            <li className={`${page === 'aprojetos' ? 'marcado' : ''}`}>
+                            <li className={`${page === 'projetos' ? 'marcado' : ''}`}>
                                 <div className="menu-text">
                                     <i><AiOutlineBulb/></i>
                                     <p>Projetos</p>
@@ -43,14 +43,14 @@ export class AsideMenu extends Component {
                                     </li>
                                 </ul>
                             </li>
-                            <li className={`${page === 'aservicos' ? 'marcado' : ''}`}>
+                            <li className={`${page === 'servicos' ? 'marcado' : ''}`}>
                                 <Link className="menu-text" to="/servicos"><i><AiOutlineUnorderedList/></i>
                                     <p>Serviços Ofertados</p>
                                 </Link>
                             </li>
                             <li className={`${page === 'solicitacoes' ? 'marcado' : ''}`}>
                                 <div className="menu-text">
-                                    <i><AiOutlineBulb/></i>
+                                    <i><AiOutlineUserAdd/></i>
                                     <p>Solicitações</p>
                                 </div>
 

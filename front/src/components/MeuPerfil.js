@@ -17,7 +17,7 @@ class MeuPerfil extends Component {
             <div className="MeuPerfil">
                 <NavPerfil abrirMenu={this.abreMenu}/>
                 <AsideMenu menu={this.state.menu}/>
-                <ContainerPerfil/> 
+                <ContainerPerfil menu={this.state.menu} /> 
             </div>
         )
     }

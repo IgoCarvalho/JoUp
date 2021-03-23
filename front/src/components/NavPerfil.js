@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Busca from '../commons/Busca';
 import Logo from '../commons/Logo';
 import {AiOutlineMenu} from "react-icons/ai";
+
 import '../components/Nav.css';
 import PerfilUser from '../commons/PerfilUser';
 

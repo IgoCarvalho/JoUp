@@ -18,7 +18,7 @@ export class Servicos extends Component {
             <div className="servicos">
                 <NavPerfil abrirMenu={this.abreMenu}/>
                 <AsideMenu page="servicos" menu={this.state.menu}/>
-                <ContainerServico/>
+                <ContainerServico menu={this.state.menu}/>
             </div>
         )
     }

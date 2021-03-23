@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 export class ContainerPerfil extends Component {
     render() {
         return (
-            <div className="ContainerPerfil">
+            <div className={`ContainerPerfil ${this.props.menu && 'open'}`}>
                 <div className="topSessao">
                 <h2>Meu perfil</h2>
                     <button className="bRoxoRedondo"><Link to=""><i><FiEdit/></i>Editar perfil</Link></button> 

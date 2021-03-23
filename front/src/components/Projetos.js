@@ -18,7 +18,7 @@ export class Projetos extends Component {
             <div className="projetos">
                 <NavPerfil abrirMenu={this.abreMenu}/>
                 <AsideMenu page="projetos" menu={this.state.menu}/>
-                <ContainerProjeto/>
+                <ContainerProjeto menu={this.state.menu}/>
             </div>
         )
     }

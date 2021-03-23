@@ -2,8 +2,8 @@
     display: flex;
     flex: row;
     color: white;
-    padding: 0;
-    margin: 0 220px 0 0;
+    padding:0;
+    margin: 0;
 }
 
 .AsideContainer{
@@ -15,7 +15,7 @@
     text-align: left;
     position: fixed;
     color: white;
-    padding-top: 80px;
+    padding-top: 8%;
     /* padding: 0; */
     transition: 0.5s;
     /* overflow: hidden; */
@@ -36,6 +36,11 @@
     color: #fff;
     cursor: pointer;
 }
+.AsideContainer ul li.marcado {
+
+    background-color: #fff;
+    color: #7f529a;
+} 
 .AsideContainer ul li:hover {
     background-color: #fff;
     color: #7f529a;

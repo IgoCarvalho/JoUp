@@ -18,6 +18,8 @@ import RedefinirSenha from './RedefinirSenha';
 import RedefinirSenhaPage2 from './RedefinirSenhaPage2';
 import MeuPerfil from './MeuPerfil';
 import MinhaConta from './MinhaConta';
+import Solicitacoes from './Solicitacoes';
+import DetalheSolicitacao from './DetalheSolicitacao';
 
 import CustomRoute from './CustomRoute';
  
@@ -45,6 +47,8 @@ export class Rotas extends Component {
                     <CustomRoute exact path="/codredefinirsenha" component={RedefinirSenhaPage2}></CustomRoute>
                     <CustomRoute privated exact path="/perfil" component={MeuPerfil}></CustomRoute>
                     <CustomRoute privated exact path="/conta" component={MinhaConta}></CustomRoute>
+                    <CustomRoute privated exact path="/solicitacoes" component={Solicitacoes}></CustomRoute>
+                    <CustomRoute privated exact path="/detalhesolicitacao" component={DetalheSolicitacao}></CustomRoute>
                 </Switch>
                 </BrowserRouter>
             </div>

@@ -109,7 +109,7 @@ class DetalhesProjeto extends Component {
                                 <div className="roxo"></div>
                             </div>
                         </div>
-                        <table className="fasesProjeto">
+                        <table className="fasesProjeto"> 
                                 <tr>
                                     <td>
                                     <input type="checkbox"/>

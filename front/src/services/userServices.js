@@ -18,6 +18,23 @@ const userServices = {
         });
     });
   },
+  getSocilMediaData(data) {
+    return new Promise((resolve, reject) => {
+      axios
+        .put('users/update-social-data', data)
+        .then((response) => {
+          const { user } = response.data;
+
+          resolve(user);
+        })
+        .catch((error) => {
+          const message = error.response.data.message;
+          console.log(message);
+
+          reject(message);
+        });
+    });
+  }
   
 };
 

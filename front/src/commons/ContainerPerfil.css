@@ -2,10 +2,16 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 0 120px 0 0;
+    padding: 0 120px;
     flex-direction: column;
     width: 100%;
+    transition: all 300ms;
 }
+.ContainerPerfil.open {
+    margin-left: 200px;
+    padding: 0 50px;
+}
+
 .ContainerPerfil h2{
     color: #7f529a;
 }

@@ -1,12 +1,15 @@
 .ContainerProjeto{
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0 120px 0 0;
     flex-direction: column;
+    padding: 0 8vw;
     width: 100%;
+    margin: 0;
+    transition: all 300ms;
 }
-
+.ContainerProjeto.open {
+    margin-left: 200px;
+    padding: 0 4vw;
+}
 
 .ContainerProjeto h2{
     color: #7f529a;
@@ -37,45 +40,69 @@
     margin: 0 8px 0 0;
 }
 .CardsContainer{
-    width: 100%;
     border-top: 1px solid  #B2B2B2;
     margin: 0;
-    padding:20px 0 100% 0;
+    padding:20px 0;
 }
 .listaProjetos{
-    width: 1010px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
     list-style: none;
     margin: 0 auto;
     padding: 0;
+    position: relative;
 }
 .listaProjetos li{
-    padding: 20px;
+    position: relative;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    padding: 30px 20px;
     font-size: 13px;
     margin:10px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px 15px 0 0;
     text-align: left;
-    position: relative;
     color: black;
     cursor: pointer;
 }
 
+
+.listaProjetos .progresProj{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+.listaProjetos .progresProj .cinza {
+    background-color: #C4C4C4;
+    width: 100%;
+    height: 6px;
+    margin: 0;
+    padding: 0;
+}
+.listaProjetos .progresProj .roxo{
+    background-color: #7F529A;
+    width: 69%;
+    height: 6px;
+    margin: 0;
+    padding: 0;
+}
+
 .listaProjetos .progressoProjeto{
     background-color: rgb(221, 221, 221);
-    border-radius: 50px;
     position: relative;
 }
 
 .listaProjetos  .progressoRoxo{
     background-color: #7f529a;
-    border-radius: 50pt;
     width: 80%;
 }
 
