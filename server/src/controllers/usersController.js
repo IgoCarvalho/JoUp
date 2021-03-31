@@ -1,25 +1,24 @@
 const { hash, compare } = require('bcrypt');
 const slugify = require('slugify');
+
 const omitKeys = require('../utils/omitKeys');
+const plans = require('../utils/plans');
 const jwt = require('../utils/jwt');
+const socialMediaService = require('../services/socialMediaService');
 
 const userModel = require('../models/User');
-const socialMediaService = require('../services/socialMediaService');
 
 module.exports = {
   async signup(req, res) {
-    const { name, email, password } = req.body;
+    const { username, email, password } = req.body;
 
     try {
-      const username = slugify(`${name} ${Date.now()}`, { lower: true });
-
-      const avatarName = String(name).trim().replace(' ', '+');
+      const avatarName = String(username).trim().replace(' ', '+');
       const avatar_url = `https://ui-avatars.com/api/?background=7F529A&color=fff&name=${avatarName}`;
 
       const hashedPassword = await hash(password, 10);
 
       const newUser = await userModel.create({
-        name,
         username,
         email,
         password: hashedPassword,
@@ -59,7 +58,7 @@ module.exports = {
       const token = jwt.sign({ user: user._id });
 
       res.json({
-        user: omitKeys(user, 'password'),
+        user: plans.populate(omitKeys(user, 'password')),
         token,
       });
     } catch (error) {
@@ -69,19 +68,23 @@ module.exports = {
   },
   async updatePlan(req, res) {
     const id = req.auth;
-    const { plan } = req.body;
+    const { plan, ...creditCard } = req.body;
     try {
       const newDate = new Date();
 
       const updated = await userModel.findByIdAndUpdate(
         id,
         {
-          $set: { 'plan.key': plan, 'plan.signatureDate': newDate },
+          $set: {
+            'plan.key': plan,
+            'plan.signatureDate': newDate,
+            creditCard,
+          },
         },
         { new: true }
       );
 
-      res.json({ user: omitKeys(updated, 'password') });
+      res.json({ user: plans.populate(omitKeys(updated, 'password')) });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error });
@@ -104,7 +107,7 @@ module.exports = {
     try {
       const user = await userModel.findById(id);
 
-      res.json({ user: omitKeys(user, 'password') });
+      res.json({ user: plans.populate(omitKeys(user, 'password')) });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error });
@@ -115,19 +118,18 @@ module.exports = {
     const { username, socialMedia } = req.body;
 
     try {
-
       const data = await socialMediaService[socialMedia](username);
 
       if (!data) {
-        throw new Error()
+        throw new Error();
       }
       const user = await userModel.findById(id);
 
-      user.socialMediaData[socialMedia] = data;
+      user.socialMediaData[socialMedia] = { username, data };
 
       await user.save();
 
-      res.json({ user: omitKeys(user, 'password') });
+      res.json({ user: plans.populate(omitKeys(user, 'password')) });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error });

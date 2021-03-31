@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: false,
     },
     username: {
       type: String,
@@ -41,6 +41,14 @@ const UserSchema = new mongoose.Schema(
     socialMediaData: {
       behance: { type: Map, required: false },
       linkedin: { type: Map, required: false },
+    },
+    creditCard: {
+      titular: { type: String, required: false },
+      cpf: { type: String, required: false },
+      numCartao: { type: String, required: false },
+      dataValidade: { type: String, required: false },
+      cvv: { type: String, required: false },
+      formaPagamento: { type: String, required: false },
     }
   },
   {

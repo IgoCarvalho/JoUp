@@ -18,7 +18,7 @@ const SolicitacaoSchema = new Schema(
       telefone: {type: String, required: true},
     },
     referencias_cliente: [{
-      name: {type: String, require: true},
+      nome: {type: String, require: true},
       link: {type: String, require: true},
     }],
     respostas_cliente: {
@@ -33,13 +33,13 @@ const SolicitacaoSchema = new Schema(
       min: { type: Number, required: true },
       max: { type: Number, required: true },
     },
-    solicitado: [{
+    solicitado: {
       inicio: {type: Date, require: true},
       prazo: {type: Date, require: true},
-    }],
+    },
     aceito: {
       type: Boolean,
-      default: false
+      required: false
     },
   },
   { timestamps: true }

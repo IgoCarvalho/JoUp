@@ -1,11 +1,13 @@
 const puppeteer = require('puppeteer');
 const { LinkedInProfileScraper } = require('linkedin-profile-scraper');
 
+const { LINKEDIN_TOKEN } = process.env;
+
 module.exports = {
   async linkedin(username) {
     try {
       const scraper = new LinkedInProfileScraper({
-        sessionCookieValue: la,
+        sessionCookieValue: LINKEDIN_TOKEN,
         keepAlive: false,
       });
 
@@ -15,7 +17,7 @@ module.exports = {
         `https://www.linkedin.com/in/${username}`
       );
 
-      return result;
+      return result.experiences || [];
     } catch (error) {
       throw error;
     }

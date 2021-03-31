@@ -1,8 +1,8 @@
 const plans = {
   premium: {
     name: 'Premium',
-    projectsNum: 0,
-    servicesNum: 0,
+    projectsNum: -1,
+    servicesNum: -1,
     expiresTime: 30,
     socialMediaLink: true,
   },
@@ -42,5 +42,12 @@ module.exports = {
     expiresDate.setDate(expiresDate.getDate() + plans[key].expiresTime);
 
     return expiresDate < today;
+  },
+  populate(user) {
+    if (!user.plan) return user;
+
+    user.plan = { ...user.plan, ...this.get(user.plan.key) };
+
+    return user;
   },
 };

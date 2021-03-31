@@ -33,18 +33,17 @@ const ProjectSchema = new Schema(
       required: true,
     },
     contrato: [{
+      nome: {type: String, require: true},
       link: {type: String, require: true},
     }],
     fases_projeto: [{
-      titulo: {type: String, required: true},
-      descricao: {type: String, required: true},
-      data_inicio: {type: Date, required: true},
-      data_fim: {type: Date, required: true},
+      nome: {type: String, required: true},
+      data: {type: Map, required: true},
       completo: {type: Boolean, default: false},
     }],
-    faixa_de_preco: {
-      min: { type: Number, required: true },
-      max: { type: Number, required: true },
+    parcelas: {
+      primeira: { type: Map, required: true },
+      segunda: { type: Map, required: true },
     },
     faixa_de_tempo: {
       min: { type: Number, required: true },
