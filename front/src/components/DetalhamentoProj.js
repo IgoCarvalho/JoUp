@@ -20,7 +20,7 @@ export class DetalhamentoProj extends Component {
             <div className="projetos">
                 <NavPerfil abrirMenu={this.abreMenu}/>
                 <AsideMenu page="projetos" menu={this.state.menu}/>
-                <ContainerDetalhamento/>
+                <ContainerDetalhamento menu={this.state.menu} />
             </div>
         )
     }

@@ -3,14 +3,19 @@ import '../commons/ContainerServico.css';
 import { FaPlus } from "react-icons/fa";
 import { AiOutlinePlus } from "react-icons/ai";
 import '../commons/BotaoRoxo.css';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import NoServiceIMG from '../images/NoServiceIMG.svg'
 import { FiMoreHorizontal } from "react-icons/fi";
 
-import { fetchCreateService, fetchGetAllService } from '../store/actions/servicesActions'
+import { fetchGetAllService } from '../store/actions/servicesActions'
+import PageLoading from '../components/PageLoading';
 
 export class ContainerServico extends Component { 
+    state = {
+        loading: true
+    }
+    
     componentDidMount() {
         const { fetchGetAllService: getAllService } = this.props;
 
@@ -18,10 +23,26 @@ export class ContainerServico extends Component {
             .then(() => {
                 console.log('pegou tudo');
             })
+            .finally(() => {
+                this.setState({loading: false})
+            })
+    }
+
+    navigateToSolicitacao = (id) => (e) => {
+        e.stopPropagation();
+
+        const { history } = this.props;
+
+        history.push('/criarsolicitacao', {id});
+        
     }
     
     render() {
-        console.log(this.props);
+
+        if(this.state.loading) {
+            return <PageLoading />
+        }
+
         return (
             <div className={`ContainerServico ${this.props.menu && 'open'}`}>
                 <div className="topSessao">
@@ -61,6 +82,7 @@ export class ContainerServico extends Component {
                                             }}>Excluir</span>
                                             <span>Gerar PDF</span>
                                             <span>Copiar Link</span>
+                                            <span onClick={this.navigateToSolicitacao(service._id)}>Solicitar</span>
                                         </div>
                                     </div>
                                 </li>
@@ -84,7 +106,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = { fetchCreateService, fetchGetAllService };
+const mapDispatchToProps = { fetchGetAllService };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContainerServico)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ContainerServico))

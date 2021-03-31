@@ -37,7 +37,7 @@ export class AsideMenu extends Component {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/projetos">
+                                        <Link to="/projetosfinalizados">
                                             <p>Finalizados</p>
                                         </Link>
                                     </li>
@@ -57,11 +57,11 @@ export class AsideMenu extends Component {
                                 <ul className="sub-menu">
                                     <li>
                                         <Link to="/solicitacoes">
-                                            <p>Novas</p>
+                                            <p>Novas solicitações</p>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/solicitacoes">
+                                        <Link to="/solicitacoespendentes">
                                             <p>Pendentes</p>
                                         </Link>
                                     </li>

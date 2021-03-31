@@ -19,7 +19,8 @@ export class ContratarPlano extends Component {
             {key: 'complete', component: <PlanoCompleto/>},
             {key: 'premium', component: <PlanoPremium/>},
         ],
-        planoSelecionado: ''
+        planoSelecionado: '',
+        submitting: false
     }
 
     selectPlano = (planoKey) => {
@@ -27,15 +28,8 @@ export class ContratarPlano extends Component {
     }
 
     contractPlan = () => {
-
-        const { fetchPlan: plan, history } = this.props;
-
-        plan(this.state.planoSelecionado)
-            .then(() => {
-                console.log('deu certo');
-                history.push('/visaogeral')
-            })
-        
+        const { history } = this.props
+        history.push('/dadospagamento', {plan: this.state.planoSelecionado})
     }
     
     render() {
@@ -59,14 +53,12 @@ export class ContratarPlano extends Component {
                 </ListaPlanos>
                 
                 <div className="bNext">
-                    <button disabled={!this.state.planoSelecionado} className="bRoxoRedondo" onClick={this.contractPlan}>Próximo</button>
+                    <button disabled={this.state.submitting || !this.state.planoSelecionado} className="bRoxoRedondo" onClick={this.contractPlan}>Próximo</button>
                 </div>
             </div>
         )
     }
 }
 
-const mapDispatchToProps = { fetchPlan };
 
-
-export default withRouter(connect(undefined, mapDispatchToProps)(ContratarPlano));
+export default withRouter(ContratarPlano);

@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import 'moment/locale/pt-br'
+import 'react-datepicker/dist/react-datepicker.css';
+
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

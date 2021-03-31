@@ -2,43 +2,161 @@ import React, { Component } from 'react';
 import '../commons/ContainerDetalhamento.css';
 import '../commons/ContainerProjeto.css';
 import '../commons/BotaoRoxo.css';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FiEdit } from "react-icons/fi";
 import { AiOutlineLink} from "react-icons/ai";
+import { connect } from 'react-redux';
+import Moment from 'react-moment'
+
+import { fetchGetOneProjeto, fetchUpdateProjeto } from '../store/actions/projetosActions';
+import { MdAutorenew } from 'react-icons/md';
 
 class DetalhesProjeto extends Component {
+    state = {
+        projeto: null,
+        submitting: false,
+        submittingFase: null,
+        submittingParcela: '',
+    }
+    
+    componentDidMount() {
+        const { id } = this.props.match.params;
+
+        const { fetchGetOneProjeto: getOneProjeto } = this.props;
+
+        getOneProjeto(id)
+            .then(res=>{
+                this.setState({ projeto: res })
+            })
+    }
+
+    calculateProgress = () => {
+        const { projeto } = this.state;
+
+        const fases = projeto.fases_projeto.length;
+        const completas = projeto.fases_projeto.filter(f=>f.completo).length;
+
+        const porcentagem = Math.round((completas * 100) / fases)
+        console.log(porcentagem);
+
+        return porcentagem;
+        
+    }
+
+    handleParcelas = (e) => {
+        const { name } = e.target;
+
+        const { projeto } = this.state;
+        const { fetchUpdateProjeto: updateProjeto } = this.props;
+
+        projeto.parcelas[name].pago = !projeto.parcelas[name].pago;
+        
+        this.setState({projeto, submittingParcela: name, submitting: true})
+
+        updateProjeto(projeto._id, projeto)
+            .then((newProjeto) => {
+                this.setState({projeto: newProjeto, submittingParcela: '', submitting: false})
+            })
+            .catch(() => {
+                projeto.parcelas[name].pago = !projeto.parcelas[name].pago;
+                this.setState({projeto, submittingParcela: '', submitting: false})
+            })
+
+
+    }
+
+    handleFases = (i) => () => {
+
+        const { projeto } = this.state;
+        const { fetchUpdateProjeto: updateProjeto } = this.props;
+
+        projeto.fases_projeto[i].completo = !projeto.fases_projeto[i].completo;
+        
+        this.setState({projeto, submittingFase: i, submitting: true})
+
+        updateProjeto(projeto._id, projeto)
+            .then((newProjeto) => {
+                this.setState({projeto: newProjeto, submittingFase: null, submitting: false})
+            })
+            .catch(() => {
+                projeto.fases_projeto[i].completo = !projeto.fases_projeto[i].completo;
+                this.setState({projeto, submittingFase: null, submitting: false})
+            })
+
+
+
+
+    }
+
+    checkFaseData = (dataEntrega) => {
+        const parseData = (date) => date.slice(0,10).replace(/-/g,'/');
+
+        const date = new Date();
+
+        const hoje = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toJSON();
+
+        console.log(dataEntrega, hoje);
+
+        if(parseData(dataEntrega) === parseData(hoje)) {
+            return 'hoje'
+        }
+
+        if(new Date(dataEntrega) < new Date()) {
+            return 'atrasado'
+        }
+
+        return '';
+
+    }
+    
     render() {
+        const { projeto } = this.state;
+        
+        if(!projeto) {
+            return 'nao tem nada'
+        }
+        
         return (
-            <div className="ContainerProjeto">
+            <div className={`ContainerProjeto detalhes ${this.props.menu && 'open'}`}>
                 <div className="topSessao">
-                    <h2>Detalhamento do projeto / <strong>Título do projeto</strong></h2>
-                    <button className="bRoxoRedondo"><Link to="adicionarservico"><i><FiEdit/></i>Editar projeto</Link></button>
+                    <h2>Detalhamento do projeto / <strong>{projeto.titulo}</strong></h2>
+                    <button className="bRoxoRedondo"><Link to={`/editarprojeto/${projeto._id}`}><i><FiEdit/></i>Editar projeto</Link></button>
                 </div>
                 <section className="SessoesProjeto">
                     <div className="conteudoProjeto">
                         <div className="infoProjeto">
                             <h2>Dados do cliente</h2>
                             <strong><p>Nome completo:</p></strong>
-                            <p>Luana Moreira Brumado</p>
+                            <p>{projeto.dados_cliente.nome}</p>
                             <strong><p>Email:</p></strong>
-                            <p>luana.moreira@gmail.com</p>   
+                            <p>{projeto.dados_cliente.email}</p>   
                             <strong><p>Telefone:</p></strong>
-                            <p>(88)99999-9999</p>
+                            <p>{projeto.dados_cliente.telefone}</p>
                             
                             <div className="precosPrazos">
                             <h2 className="sessionPreco">Preço pelo serviço</h2>
                             <table className="NunericOptions">
                                 <tr className="preco">
                                     <td>
-                                        <legend>No mínimo</legend>
+                                        <legend>
+                                            <div className="parcelas-container">
+                                                <input name="primeira" disabled={this.state.submitting} checked={this.state.projeto.parcelas.primeira.pago} onChange={this.handleParcelas} type="checkbox"/> 1ª parcela
+                                                {this.state.submittingParcela === 'primeira' && <MdAutorenew className="load-icon" />}
+                                            </div>
+                                        </legend>
                                         <div className="InputsNumeric">
-                                            <td><label>R$</label></td><td><input type="numeric" value="3" disabled/></td>
+                                            <td><label>R$</label></td><td><input type="numeric" defaultValue={projeto.parcelas.primeira.valor} disabled/></td>
                                         </div>
                                     </td>
                                     <td>
-                                        <legend>No mínimo</legend>
+                                        <legend>
+                                            <div className="parcelas-container">
+                                                <input name="segunda" disabled={this.state.submitting} checked={this.state.projeto.parcelas.segunda.pago} onChange={this.handleParcelas} type="checkbox"/> 2ª parcela
+                                                {this.state.submittingParcela === 'segunda' && <MdAutorenew className="load-icon" />}
+                                            </div>
+                                        </legend>
                                         <div className="InputsNumeric">
-                                            <td><label>R$</label></td><td><input type="numeric" value="3" disabled/></td>
+                                            <td><label>R$</label></td><td><input type="numeric" defaultValue={projeto.parcelas.segunda.valor} disabled/></td>
                                         </div>
                                     </td>
                                 </tr>
@@ -49,13 +167,13 @@ class DetalhesProjeto extends Component {
                                     <td>
                                         <legend>No mínimo</legend>
                                         <div className="InputsNumeric">
-                                            <td><label>Semanas</label></td><td><input type="numeric" disabled/></td>
+                                            <td><label>Semanas</label></td><td><input type="numeric" defaultValue={projeto.faixa_de_tempo.min} disabled/></td>
                                         </div>
                                     </td>
                                     <td>
                                         <legend>No mínimo</legend>
                                         <div className="InputsNumeric">
-                                            <td><label>Semanas</label></td><td><input type="numeric" disabled/></td>
+                                            <td><label>Semanas</label></td><td><input type="numeric" defaultValue={projeto.faixa_de_tempo.max} disabled/></td>
                                         </div>
                                     </td>
                                 </tr>
@@ -63,11 +181,12 @@ class DetalhesProjeto extends Component {
                                 <div className="referencias">
                                     <h2>Referencias do cliente</h2>
                                     <ul>
-                                        <li><label><a href="" target="_blank"><i><AiOutlineLink/></i>Google Drive</a></label></li>
-                                        <li><label><a href="" target="_blank"><i><AiOutlineLink/></i>Vídeo do Youtube</a></label></li><br/>
-                                    </ul>
-                                    <ul>
-                                        <li><label><a href="" target="_blank"><i><AiOutlineLink/></i>https://determined-no...</a></label></li>
+                                        {
+                                            projeto.referencias_cliente.map(ref_cli=>(
+                                                <li key={ref_cli.link}><label><a href={ref_cli.link} target="_blank" rel="noreferrer"><i><AiOutlineLink/></i>{ref_cli.nome || ref_cli.link}</a></label></li>
+                                            ))
+                                        }
+                                        {/* <li><label><a href="" target="_blank"><i><AiOutlineLink/></i>Vídeo do Youtube</a></label></li><br/> */}
                                     </ul>
                                 </div>
                                 
@@ -75,27 +194,15 @@ class DetalhesProjeto extends Component {
                         </div>
                         <div className="perguntasProjeto">
                         <h2>Respostas dos requisitos</h2>
-                                <p>As respostas para as requisicoes do servico irao aqui, é uma caida de texto 
-                                corrido apenas. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                 ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                   velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                                   cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id 
-                                   est laborum.<br></br>
-                                   
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                 nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                   eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                    sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p dangerouslySetInnerHTML={{__html: projeto.respostas_cliente}} />
                                 <div className="filtros">
                                     <h2>Filtros</h2>
                                     <ul>
-                                        <li><label>Design</label></li>
-                                        <li><label>IHC</label></li>
-                                        <li><label>UX</label></li>
+                                        {
+                                            projeto.filtros.map(filtro=>(
+                                                <li key={filtro}><label>{filtro}</label></li>
+                                            ))
+                                        }
                                     </ul>
                                 </div>
                         </div>
@@ -104,26 +211,36 @@ class DetalhesProjeto extends Component {
                     <div className="fasesDesenvolvimento">     
                         <h2>Fases de desenvolvimento</h2>
                         <div className="progresProj">
-                            <label>69%</label>
+                            <label>{`${this.calculateProgress()}%`}</label>
                             <div className="cinza">
-                                <div className="roxo"></div>
+                                <div style={{width: `${this.calculateProgress()}%`}} className="roxo"></div>
                             </div>
                         </div>
                         <table className="fasesProjeto"> 
-                                <tr>
-                                    <td>
-                                    <input type="checkbox"/>
-                                    </td>
-                                    <td>
-                                        <h3>Fase 1</h3>
-                                        <p>Montagem do briefing</p>
-                                    </td>
-                                    <td>
-                                        <label className="prazoFases">13 jan - 19 jan</label>
-                                    </td>
-                                </tr>
-                                <br/>
-                                <tr>
+                                {
+                                    projeto.fases_projeto.map((fase, i)=>(
+                                        <React.Fragment key={`${fase.nome}-${i}`}>
+                                            <tr>
+                                                <td>
+                                                <input disabled={this.state.submitting} checked={fase.completo} onChange={this.handleFases(i)} type="checkbox"/>
+                                                </td>
+                                                <td>
+                                                    <h3>{`Fase ${i+1}`} {this.state.submittingFase == i && <MdAutorenew className="load-icon" />}</h3>
+                                                    <p>{fase.nome}</p>
+                                                </td>
+                                                <td>
+                                                    <label className={`prazoFases ${fase.completo? 'completo' : this.checkFaseData(fase.data.end)}`}>
+                                                        <Moment format="D MMM" locale="pt-br" >{fase.data.start}</Moment>
+                                                        {' - '}
+                                                        <Moment format="D MMM" locale="pt-br" >{fase.data.end}</Moment>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <br/>
+                                        </React.Fragment>
+                                    ))
+                                }
+                                {/* <tr>
                                     <td>
                                     <input type="checkbox"/>
                                     </td>
@@ -186,7 +303,7 @@ class DetalhesProjeto extends Component {
                                     <td>
                                         <label className="prazoFases">13 jan - 19 jan</label>
                                     </td>
-                                </tr>
+                                </tr> */}
 
                             
                         </table>
@@ -198,6 +315,8 @@ class DetalhesProjeto extends Component {
     }
 }
 
-export default DetalhesProjeto
+const mapDispatchToProps = { fetchGetOneProjeto, fetchUpdateProjeto };
+
+export default withRouter(connect(undefined, mapDispatchToProps)(DetalhesProjeto))
 
 

@@ -162,3 +162,154 @@
 .idiomas .textLang{
     padding-right: 2vw;
 }
+
+.socialmedia-header {
+    /* display: ; */
+    position: relative;
+}
+
+.no-behance-data,
+.no-linkedin-data {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.socialmedia-content .socialmedia-input span {
+    color: #919191;
+}
+.socialmedia-content .socialmedia-input {
+    display: flex;
+    align-items: center;
+}
+.socialmedia-header .socialmedia-input {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100px;
+    display: flex;
+    align-items: center;
+}   
+.socialmedia-content .socialmedia-input input,
+.socialmedia-header .socialmedia-input input {
+    border: 1px solid #C1C0C0;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 3.5px;
+    font-family: 'Nunito Sans Regular';
+    margin: 5px;
+    outline: none;
+}
+.socialmedia-content .socialmedia-input input:focus,
+.socialmedia-content .socialmedia-input input:hover,
+.socialmedia-header .socialmedia-input input:focus,
+.socialmedia-header .socialmedia-input input:hover {
+    border: 1px solid #7f529a;
+    background-color: #F9F0FF;
+}
+
+.socialmedia-content .socialmedia-input button:disabled,
+.socialmedia-header .socialmedia-input button:disabled {
+    opacity: 0.8;
+}
+.socialmedia-content .socialmedia-input button,
+.socialmedia-header .socialmedia-input button {
+    border: 0;
+    border-radius: 3px;
+    background-color: #7f529a;
+    color: #fff;
+    height: 30px;
+    min-width: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.socialmedia-content .socialmedia-input .load-icon,
+.socialmedia-header .socialmedia-input .load-icon {
+    margin-left: 5px;
+    animation: icon-loading 1s linear infinite;
+}
+
+@keyframes icon-loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.socialmedia-content .behance-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+.behance-container .behance-post {
+    background: #fff;
+    /* padding: 5px; */
+    border-radius: 5px;
+    text-align: initial;
+    position: relative;
+    overflow: hidden;
+}
+
+.behance-container .behance-post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+}
+.behance-container .behance-post .behance-link {
+    color: #7f529a;
+    text-shadow: 1px 1px 3px #000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 30%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 81%);
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    transition: opacity 300ms;
+}
+.behance-container .behance-post:hover .behance-link {
+    opacity: 1;
+}
+
+.socialmedia-content .linkedin-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.linkedin-container .linkedin-post {
+    width: 50%;
+    text-align: left;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-right: 50px;
+}
+.linkedin-container .linkedin-post p strong {
+    color: #7f529a;
+}
+.linkedin-container .linkedin-post p {
+    color: #000;
+    font-size: 14px;
+    margin: 5px 0;
+}
+.linkedin-container .linkedin-post span {
+    display: block;
+    color: #787878;
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+.no-premium {
+    text-align: center!important;
+}

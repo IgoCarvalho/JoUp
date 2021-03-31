@@ -1,6 +1,22 @@
 import React from 'react';
 
+import SuccessIcon from '../images/MsgConfirm.svg'
+import ErrorIcon from '../images/MsgNegative.svg'
+
 import './DialogConfirm.css';
+
+export const SuccessMsg = ({ message }) => (
+  <div className="message-dialog success">
+      <img src={SuccessIcon} alt="Icone de sucesso" />
+      <p>{ message }</p>
+  </div>
+)
+export const ErrorMsg = ({ message }) => (
+  <div className="message-dialog success">
+      <img src={ErrorIcon} alt="Icone de erro" />
+      <p>{ message }</p>
+  </div>
+)
 
 function DialogConfirm({ open, ...props }) {
   if (!open) {

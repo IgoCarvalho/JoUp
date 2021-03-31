@@ -8,7 +8,7 @@ export class Apresentacao extends Component {
         return (
             <section className="apresentacao" id="apresentacao">
                 <div className="texto1">
-                    <h2>Gerencie seus projetos e seus clientes em um só lugar</h2>
+                    <h2>Gerencie seus projetos e seus clientes em um só lugar {process.env.REACT_APP_LINK_SECRETO} </h2>
                     <p>Somos uma ferramenta de gestão desenvolvida exclusivamente para designers freelancers. Com a JoUp você pode gerenciar, agilizar e refinar seu fluxo de projeto e clientes. Gerenciamento de clientes e projetos em um só lugar.</p>
                     <button className="botaoAmarelo">Experimente como funciona</button>
                 </div>

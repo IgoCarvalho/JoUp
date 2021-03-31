@@ -4,25 +4,46 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
+    margin-left: 50px;
     transition: all 300ms;
 }
 .ContainerVisaoGeral.open {
     margin-left: 200px;
-    padding: 8em 2em; 
+    padding: 8em 6em; 
 }
 .ContainerVisaoGeral.open .CardsContainer {
     padding-right: 1em;
 }
 
+.ContainerVisaoGeral .listaProjetos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 15px;
+}
 .ContainerVisaoGeral .listaProjetos li{
-    margin-top: 0;
-    margin-bottom: 2em;
+
+    margin: 0 !important;
 }
 
 .ContainerVisaoGeral .CardsContainer{
     display: flex;
     flex-direction: column;
-    padding-right: 6em;
+    /* padding-right: 2em; */
+    margin-right: 30px;
+    width: 100%;
+}
+.ContainerVisaoGeral .CardsContainer .no-data {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ContainerVisaoGeral .CardsContainer .no-data img{
+    height: 300px;
+    margin-top: 30px;
+}
+.ContainerVisaoGeral .CardsContainer .no-data p {
+    color: #919191;
 }
 
 .ContainerVisaoGeral h2{
@@ -31,12 +52,97 @@
     text-align: left;
     border-bottom: 1px solid #B2B2B2;
     margin-bottom: 1em;
-    width: 95%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .Calendário{
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
-    padding: 2vw;
+    padding: 10px;
+}
+
+
+
+.Calendário .react-datepicker {
+    border: 0;
+    background: transparent;
+    font-family: 'Nunito Sans Regular';
+}
+.Calendário .react-datepicker__header {
+    background: transparent;
+    border: 0;
+}
+.Calendário .react-datepicker__today-button {
+    position: absolute;
+    top: 5px;
+    right: 35px;
+    background: transparent;
+    border: 0;
+}
+.Calendário .react-datepicker__navigation--previous {
+    right: 70px;
+    left: auto;
+}
+.Calendário .react-datepicker__header .react-datepicker__current-month {
+    text-align: left;
+    margin-left: 10px;
+    color: #7f529a;
+}
+.Calendário .react-datepicker__header .react-datepicker__day-names {
+    font-weight: 700;
+    margin-top: 5px;
+}
+.Calendário .react-datepicker__day-name,
+.Calendário .react-datepicker__day {
+    padding: 3px 2px;
+    outline: none;
+}
+.Calendário .react-datepicker__day--keyboard-selected {
+    background: royalblue;
+}
+.Calendário .react-datepicker__day--selected {
+    background: #F9F0FF;
+    color: black;
+    font-weight: bold;
+}
+.Calendário .react-datepicker__day--selected:hover {
+    background: #ddb4f8;
+}
+.Calendário .react-datepicker__day--outside-month {
+    color: #B2B2B2;
+}
+
+.Calendário .react-datepicker__day--highlighted-joup {
+    position: relative;
+}
+.Calendário .react-datepicker__day--highlighted-joup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 5px;
+    background: #FFC927;
+    border-radius: 50%;
+}
+
+.itens-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.itens-list p {
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+}
+.itens-list span {
+    color: #555;
 }

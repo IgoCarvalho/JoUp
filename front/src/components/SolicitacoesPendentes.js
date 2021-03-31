@@ -4,7 +4,7 @@ import ContainerSolicitacoes from '../commons/ContainerSolicitacoes';
 import '../components/Solicitacoes.css';
 import NavPerfil from './NavPerfil';
 
-export class Solicitacoes extends Component {
+export class SolicitacoesPendentes extends Component {
     state= {
         menu: false
     };
@@ -17,10 +17,10 @@ export class Solicitacoes extends Component {
             <div className="solicitacoes">
                 <NavPerfil abrirMenu={this.abreMenu}/>
                 <AsideMenu page="solicitacoes" menu={this.state.menu}/>
-                <ContainerSolicitacoes menu={this.state.menu}/>
+                <ContainerSolicitacoes menu={this.state.menu} pendentes/>
             </div>
         )
     }
 }
 
-export default Solicitacoes;
+export default SolicitacoesPendentes;

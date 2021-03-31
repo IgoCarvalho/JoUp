@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import AsideMenu from '../commons/AsideMenu';
+import ContainerCriarSolicitacao from '../commons/ContainerCriarSolicitacao';
 import ContainerDetalheSolicitacao from '../commons/ContainerDetalheSolicitacao';
 import '../components/Projetos.css';
 import NavPerfil from './NavPerfil';
 
-export class DetalheSolicitacao extends Component {
+export class CriarSolicitacao extends Component {
     state= {
         menu: false
     };
@@ -16,11 +17,11 @@ export class DetalheSolicitacao extends Component {
         return (
             <div className="detalheSolicitacao">
                 <NavPerfil abrirMenu={this.abreMenu}/>
-                <AsideMenu page="solicitacoes" menu={this.state.menu}/>
-                <ContainerDetalheSolicitacao menu={this.state.menu} />
+                <AsideMenu menu={this.state.menu}/>
+                <ContainerCriarSolicitacao />
             </div>
         )
     }
 }
 
-export default DetalheSolicitacao;
+export default CriarSolicitacao;

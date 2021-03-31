@@ -4,9 +4,34 @@ import '../commons/ContainerConta.css';
 import { FiEdit } from "react-icons/fi";
 import { MdDone} from "react-icons/md";
 import cardicon from '../images/mastercard.svg';
+import { connect } from 'react-redux';
+import { PlanoBasico, PlanoCompleto, PlanoPremium } from './PlanosGenericos';
 
 class ContainerConta extends Component {
+    renderPlanData = () => {
+        const { user } = this.props;
+
+        switch (user.plan.name) {
+            case 'Básico':
+                return <PlanoBasico />;
+            case 'Completo':
+                return <PlanoCompleto />;
+            case 'Premium':
+                return <PlanoPremium />;
+
+            default:
+                return <p>foi mal, compra um plano aê!</p>
+        }
+
+    }
+
+    parseCartaoNum = (numCartao) => {
+        return numCartao.split('-')[3]
+    }
+    
     render() {
+        const { user } = this.props;
+        
         return (
             <section className="ContainerConta">
              <div className="topSessao">
@@ -18,9 +43,9 @@ class ContainerConta extends Component {
                         <div className="primary">
                             <h3>Acesso e segurança</h3>
                             <p><strong>Email</strong></p>
-                            <p>joanadesigns@gmail.com</p>
+                            <p>{user.email}</p>
                             <p><strong>Nome de usuário</strong></p>
-                            <p>JoanaDesigner</p>
+                            <p>{user.username}</p>
                             <p><strong>Senha</strong></p>
                             <p>**************</p>
                             <p><strong>Validação de identidade</strong></p>
@@ -29,7 +54,7 @@ class ContainerConta extends Component {
                         <div className="secundary">
                         <h3>Dados pessoais</h3>
                             <p><strong>Nome completo</strong></p>
-                            <p>Maria Joana da Silva Costa</p>
+                            <p>{user.name}</p>
                             <p><strong>Data de Nascimento</strong></p>
                             <p>28/09/1998</p>
                             <p><strong>Telefone</strong></p>
@@ -39,53 +64,34 @@ class ContainerConta extends Component {
                     <div className="dadosPlano">
                     <h3>Plano atual</h3>
                     <table className="planoAtual">
-                        <div className="preco">
-                        <label>Plano Completo</label>
-                        <h2>R$ 49,99</h2>
-                        <p><strong>Oferte até  10 serviços e acompanhe até 10 projetos por mês.</strong></p>
-                        </div>
-                        <div className="beneficios">
-                            <tr>
-                                <td><i><MdDone/></i></td><td className="descricao">Sessões ilimitadas de detalhamento do projeto.</td>
-                            </tr>
-                                <td><i><MdDone/></i></td><td className="descricao">Checklist de fases de desenvolvimento.</td>
-                            <tr>
-                                <td><i><MdDone/></i></td><td className="descricao">Link compartilhável de cada projeto.</td>
-                            </tr>
-                            <tr>
-                                <td><i><MdDone/></i></td><td className="descricao">Agenda integrada com o Google.</td>
-                            </tr>
-                            <tr>
-                                <td></td><td className="descricao">Vinculação de portfólio do Behance e currículo do LinkedIn no seu perfil profissional.</td>
-                            </tr>
-                            <tr>
-                                <td></td><td className="descricao">Avaliação dos clientes</td>
-                            </tr>
-                        </div>
+                        {
+                            this.renderPlanData()
+                        }
                     </table>
                     <br/>
-                    <div className="primary">
+                    {user.creditCard && <div className="primary">
                             <h3>Dados de Pagamento</h3>
                             <p><strong>Nome do titular</strong></p>
-                            <p>Maria Joana da Silva Costa</p>
+                            <p>{user.creditCard.titular}</p>
                             <p><strong>CPF</strong></p>
-                            <p>067.987-876-76</p>
+                            <p>{user.creditCard.cpf}</p>
                             <p><strong>Número do cartão</strong></p>
                             <div className="card">
-                            <img src={cardicon}/><p>**** **** **** 8837</p>
+                            <img src={cardicon}/><p>**** **** **** {this.parseCartaoNum(user.creditCard.numCartao)}</p>
                             </div>
                             <p><strong>Data de validade</strong></p>
-                            <p>05/21</p>
+                            <p>{user.creditCard.dataValidade}</p>
                             <p><strong>Código de segurança (CVV)</strong></p>
                             <p>****</p>
                             <p><strong>Forma de pagamento</strong></p>
                             <ul className="pagamentos">
-                            <li><input type="radio" id="credito" name="pag" value="credito"/>
+                            <li><input defaultChecked={user.creditCard.formaPagamento === 'credito'} disabled type="radio" id="credito" name="pag" value="credito"/>
                             <label for="male">Crédito</label></li>
-                            <li><input type="radio" id="debito" name="pag" value="debito"/>
+                            <li><input defaultChecked={user.creditCard.formaPagamento === 'debito'} disabled type="radio" id="debito" name="pag" value="debito"/>
                             <label for="female">Débito</label></li>
                             </ul>
-                    </div>
+                    </div>}
+                    <span></span>
                     </div>
                 </div> 
             </section>
@@ -93,4 +99,10 @@ class ContainerConta extends Component {
     }
 }
 
-export default ContainerConta
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    }    
+}
+
+export default connect(mapStateToProps)(ContainerConta);

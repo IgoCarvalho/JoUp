@@ -1,7 +1,12 @@
-.ContainerProjeto .topSessao{
+.ContainerProjeto.open {
+    margin-left: 200px;
+}
+.ContainerProjeto.detalhes .topSessao{
     border-bottom: 1px solid #B6B6B5;
     padding-bottom: 15px;
+    margin: auto;
     margin-bottom: 2em;
+    max-width: 1200px;
 }
 
 .SessoesProjeto{
@@ -205,13 +210,22 @@
 
 .prazoFases{
     color: white;
-    background-color: #3CB081;
+    background-color: #C4C4C4 !important;
     border-radius: 20px;
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 10px;
     padding-right: 10px;
     font-size: 12px;
+}
+.prazoFases.hoje {
+    background-color: #F9B21F!important;
+}
+.prazoFases.atrasado {
+    background-color: #E54348!important;
+}
+.prazoFases.completo {
+    background-color: #3CB081!important;
 }
 
 .fasesDesenvolvimento p{ 
@@ -223,6 +237,8 @@
 .fasesDesenvolvimento h3{ 
     text-align: left;
     font-size: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .fasesProjeto {
@@ -260,4 +276,39 @@
     border-radius: 100pt;
     width: 69%;
     height: 5px;
+    transition: width 300ms;
+}
+
+.parcelas-container {
+    display: flex;
+    align-items: center;
+}
+.parcelas-container input[type="checkbox"] {
+    width: auto !important;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
+}
+
+.ContainerProjeto.detalhes .filtros ul {
+    flex-wrap: wrap;
+}
+.ContainerProjeto.detalhes .filtros ul li {
+    margin-top: 10px;
+}
+
+.parcelas-container .load-icon,
+.fasesProjeto .load-icon {
+    margin-left: 5px;
+    animation: icon-loading 1s linear infinite;
+}
+
+@keyframes icon-loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

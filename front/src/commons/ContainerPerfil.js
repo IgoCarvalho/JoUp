@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../commons/BotaoRoxo.css';
 import { AiOutlineCalendar,AiOutlinePlus } from "react-icons/ai";
 import { BsCheckBox } from "react-icons/bs";
+import { MdAutorenew, MdDelete } from "react-icons/md";
 import { FaPlus, FaCaretDown } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { FiEdit } from "react-icons/fi";
@@ -9,13 +10,57 @@ import '../commons/ContainerPerfil.css';
 import PerfilUser from '../commons/PerfilUser';
 import { connect } from 'react-redux';
 
+import { fetchSocialMediaData } from '../store/actions/userActions';
+import Moment from 'react-moment';
+
 export class ContainerPerfil extends Component {
+
+    state = {
+        linkedin: '',
+        behance: '',
+        submitting: false,
+        submittingInput: ''
+    }
+
+    componentDidMount() {
+        if(!this.props.user.socialMediaData) return;
+
+        const linkedin = this.props.user.socialMediaData.linkedin ? this.props.user.socialMediaData.linkedin.username : '';
+        const behance = this.props.user.socialMediaData.behance ? this.props.user.socialMediaData.behance.username : '';
+
+        this.setState({
+            linkedin,
+            behance,
+        })
+        
+    }
+
+    handleInputs = (e) => {
+        const { name, value } = e.target
+
+        this.setState({[name]: value})
+    }
+
+    handleSubmit = (socialMedia) => () => {
+        const { fetchSocialMediaData: getSocialMediaData } = this.props;
+        const username = this.state[socialMedia];
+
+        this.setState({ submitting: true, submittingInput: socialMedia })
+
+        getSocialMediaData({username, socialMedia})
+            .then(res=>{
+                console.log('social familia');
+                this.setState({submitting: false, submittingInput: ''})
+            })
+
+    }
+    
     render() {
         return (
             <div className={`ContainerPerfil ${this.props.menu && 'open'}`}>
                 <div className="topSessao">
                 <h2>Meu perfil</h2>
-                    <button className="bRoxoRedondo"><Link to=""><i><FiEdit/></i>Editar perfil</Link></button> 
+                    <button className="bRoxoRedondo"><Link to="/editarPerfil"><i><FiEdit/></i>Editar perfil</Link></button> 
                 </div>
                 <section className="ContainerPerfilMain">
 
@@ -34,14 +79,139 @@ export class ContainerPerfil extends Component {
 
 
                     <div className="sectionLinkedin">
-                    <h3>Linkedin</h3>
-                    <p>Aqui vai oq for possível apresentar das experiencia do LinkedIn</p>
+                        <div className="socialmedia-header">
+                            <h3>Linkedin</h3>
+                            {this.props.user.socialMediaData?.linkedin && <div className="socialmedia-input">
+                                <input name="linkedin" value={this.state.linkedin} onChange={this.handleInputs} />
+                                <button 
+                                    onClick={this.handleSubmit('linkedin')}
+                                    disabled={this.state.submitting}
+                                >
+                                    OK
+                                    {this.state.submittingInput == 'linkedin' && <MdAutorenew className="load-icon" />}
+                                </button>
+                            </div>}
+
+                        </div>
+                        <div >
+                            {
+                                this.props.user.plan.socialMediaLink ? (
+                                    <div className="socialmedia-content">
+                                        { this.props.user.socialMediaData?.linkedin? (
+                                            <div className="linkedin-container">
+                                                {
+                                                    this.props.user.socialMediaData?.linkedin.data.map((i, index)=>(
+                                                        <div key={index} className="linkedin-post">
+                                                            <p><strong>{i.title}</strong></p>
+                                                            <p>{i.company} - {i.employmentType}</p>
+                                                            <span>
+                                                                {i.startDate === 'Invalid date' ? '' : <Moment format="MMM" locale="pt-br">{i.startDate}</Moment>}
+                                                                {' '}de{' '}
+                                                                {i.startDate === 'Invalid date' ? '' : <Moment format="Y" locale="pt-br">{i.startDate}</Moment>}
+                                                                {' - '}
+                                                                {i.endDate === 'Invalid date' ? '' : <Moment format="MMM" locale="pt-br">{i.endDate}</Moment>}
+                                                                {' '}de{' '}
+                                                                {i.endDate === 'Invalid date' ? '' : <Moment format="Y" locale="pt-br">{i.endDate}</Moment>}
+                                                            </span>
+
+                                                            <span>{i.location?.city}, {i.location?.province} - {i.location?.country}</span>
+
+                                                            <p>{i.description}</p>
+                                                        </div>
+                                                    ))
+                                                }
+                                            </div>
+                                        ) : (
+                                            <div className="no-linkedin-data">
+                                                <p>Vincule suas experiências de trabalho a partir de seu perfil do LinkedIn!</p>
+
+                                                <div className="socialmedia-input">
+                                                    <span>linkedin.com/in/ </span>
+                                                    <input name="linkedin" value={this.state.linkedin} onChange={this.handleInputs} placeholder="Nome de usuário" />
+                                                    <button 
+                                                        onClick={this.handleSubmit('linkedin')}
+                                                        disabled={this.state.submitting}
+                                                    >
+                                                        OK
+                                                        {this.state.submittingInput == 'linkedin' && <MdAutorenew className="load-icon" />}
+                                                    </button>
+                                                </div>
+                                                
+                                            </div>
+                                        ) }
+                                    </div>
+                                ) : 
+                                (
+                                    <p className="no-premium">Você não tem acesso a essa funcionalidade, para liberala adiquira o plano Premium!</p>
+                                )
+                            }
+                        </div>
                     </div>
 
                     <div className="sectionBehance">
+                        <div className="socialmedia-header">
+                            <h3>Behance</h3>
+                            {this.props.user.socialMediaData?.behance && <div className="socialmedia-input">
+                                <input name="behance" value={this.state.behance} onChange={this.handleInputs} />
+                                <button 
+                                    onClick={this.handleSubmit('behance')}
+                                    disabled={this.state.submitting}
+                                >
+                                    OK
+                                    {this.state.submittingInput == 'behance' && <MdAutorenew className="load-icon" />}
+                                </button>
+                            </div>}
+
+                        </div>
+                        <div >
+                            {
+                                this.props.user.plan.socialMediaLink ? (
+                                    <div className="socialmedia-content">
+                                        { this.props.user.socialMediaData?.behance? (
+                                            <div className="behance-container">
+                                                {
+                                                    this.props.user.socialMediaData?.behance.data.posts.map((post) => (
+                                                        
+                                                        <div key={post.link} className="behance-post">
+                                                            <img src={post.cover} alt={post.title} />
+                                                            <div className="behance-link">
+                                                                <a href={post.link}>{post.title}</a>
+                                                            </div>
+                                                        </div>
+                                                    ))
+                                                }
+                                            </div>
+                                        ) : (
+                                            <div className="no-behance-data">
+                                                <p>Vincule seus projetos a partir de seu perfil do Behance!</p>
+
+                                                <div className="socialmedia-input">
+                                                    <span>behance.net/ </span>
+                                                    <input name="behance" value={this.state.behance} onChange={this.handleInputs} placeholder="Nome de usuário" />
+                                                    <button 
+                                                        onClick={this.handleSubmit('behance')}
+                                                        disabled={this.state.submitting}
+                                                    >
+                                                        OK
+                                                        {this.state.submittingInput == 'behance' && <MdAutorenew className="load-icon" />}
+                                                    </button>
+                                                </div>
+                                                
+                                            </div>
+                                        ) }
+                                    </div>
+                                ) : 
+                                (
+                                    <p className="no-premium">Você não tem acesso a essa funcionalidade, para liberala adiquira o plano Premium!</p>
+                                )
+                            }
+                        </div>
+                    </div>
+
+                    {/* <div className="sectionBehance">
                     <h3>Behance</h3>
                     <p>Aqui vai oq for possível apresentar dos projetos do Behance</p>
-                    </div>
+                    </div> */}
 
                 </div>
                 <div className="dadosAdicionais">
@@ -75,42 +245,42 @@ export class ContainerPerfil extends Component {
                         <tr className="linhaIdioma">
                             <td className="textLang">Português</td>
                             <td className="LangCheck">
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" checked/>
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled checked/>
                             </td>
                         </tr>
                         <tr className="linhaIdioma">
                             <td className="textLang">Inglês</td>
                             <td className="LangCheck">
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" />
-                            <input type="checkbox" />
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled />
+                            <input type="radio" disabled />
                             </td>
                         </tr>
                         <tr className="linhaIdioma">
                             <td className="textLang">Espanhol</td>
                             <td className="LangCheck">
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" />
-                            <input type="checkbox" />
-                            <input type="checkbox" />
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled />
+                            <input type="radio" disabled />
+                            <input type="radio" disabled />
                             
                             </td>
                         </tr>
                         <tr className="linhaIdioma">
                             <td className="textLang">Japonês</td>
                             <td className="LangCheck">
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" checked/>
-                            <input type="checkbox" />
-                            <input type="checkbox" />
-                            <input type="checkbox" />
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled checked/>
+                            <input type="radio" disabled />
+                            <input type="radio" disabled />
+                            <input type="radio" disabled />
                             </td>
                         </tr>
                     </table>
@@ -131,4 +301,5 @@ const mapStateToPros = (state) => {
   }
 }
 
-export default connect(mapStateToPros)(ContainerPerfil);
+const mapDispatchToProps = { fetchSocialMediaData }
+export default connect(mapStateToPros, mapDispatchToProps)(ContainerPerfil);

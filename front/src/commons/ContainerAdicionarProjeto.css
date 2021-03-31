@@ -10,7 +10,10 @@
     font-size: 18px;
     font-family: 'Source Sans SemiBold';
     text-align: left;
-    padding: 0 10px;
+    padding:10px 0;
+}
+.ContainerAddProjeto p{
+    margin: 0;
 }
 .ContainerAddProjeto sup{
     margin: 0;
@@ -50,6 +53,8 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     padding: 2em;
+    width: 100%;
+    max-width: 900px;
 }
 
 .detalhesProjeto{
@@ -58,16 +63,23 @@
 }
 .detalhesProjeto textarea{
     resize: none;
-    width: 400px;
+    width: 420px;
 }
 
-.numericInputs{
-    display: flex;
-    justify-content: flex-start;
-    padding: 0;
+
+
+.textarea1 {
+    height: 350px;
 }
-.camposPreco{
-    padding:0  2em;
+
+.ContainerAddProjeto .camposPreco,
+.ContainerAddProjeto .camposTexto {
+    width: 50%;
+    box-sizing: border-box;
+}
+.ContainerAddProjeto .camposPreco{
+    padding:0 2em 0 0;
+    text-align: left;
 }
 .camposPreco i{
     color: black;
@@ -87,39 +99,56 @@
     margin: 10px;
     cursor: pointer;
 }
-.numericInputs legend{
+.ContainerAddProjeto .numericInputs legend{
     color: #7f529a;
     text-align: left;
+    white-space: nowrap;
+}
+.selectPreco {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding:0;
+}
+.selectPreco input{
+    display: flex;
+    position: relative;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width:20px;
 }
 
-.detalhesProjeto .textarea1{
-    height: 320px;
+.ContainerAddProjeto .select-container {
+    max-width: 395px;
+    margin-bottom: 10px;
 }
-.detalhesProjeto .textarea2{
-    height: 320px;
+.ContainerAddProjeto .referencias .referencias-inputs,
+.ContainerAddProjeto .adicionarFase .referencias-inputs {
+    display: flex;
 }
-.detalhesProjeto .textarea3{
-    height: 250px;
+.ContainerAddProjeto .adicionarFase .referencias-inputs > input {
+    width: 100%;
 }
-.numericInputs li{
+.ContainerAddProjeto .referencias,
+.ContainerAddProjeto .referencias ul {
+    margin-top: 0;
+}
+.ContainerAddProjeto .numericInputs li{
     display: flex;
     flex-direction: column;
     padding: 0;
-    margin: 0 10px;
+    margin: 0 20px 0 0; 
+    
 }
-.numericInputs li div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-}
-.numericInputs .labelcheckbox{
+.ContainerAddProjeto .numericInputs .labelcheckbox{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 0 5px 0;
 }
-.numericInputs label{
+.ContainerAddProjeto .numericInputs label{
     background: #F7F7F7;
     border: 1px solid #C1C0C0;
     box-sizing: border-box;
@@ -128,9 +157,83 @@
     margin: 0;
     color: #919191;
 }
-.numericInputs input{
-    margin: 0 0 0 -1px;
+.ContainerAddProjeto .numericInputs .selectPreco  input{
+    margin: 0;
     border-radius: 0px 3.5px 3.5px 0px;
+    width: 20px;
+}
+.ContainerAddProjeto .fasesDesenvolvimentoProj{
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    padding: 1.8em 0;
+    /* padding-top: 1.8em;
+    padding-bottom: 1.8em;
+    padding-left: 10px;
+    padding-right: 10px; */
+    border-radius: 12px;
+    /* margin-left: 20px; */
+    color: black;
+    /* width: 420px; */
+}
+
+.prazoFases{
+    color: white;
+    background-color:#3CB080;
+    border-radius: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+.fasesDesenvolvimentoProj p{ 
+    text-align: left;
+    font-size: 16px;
+    margin: 0;
+}
+
+.fasesDesenvolvimentoProj h3{ 
+    text-align: left;
+    font-size: 16px;
+}
+
+.fasesProjeto {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.fasesProjeto tr{
+    display: flex;
+    white-space: nowrap;
+    position: relative;
+}
+.fasesProjeto label{
+    position: absolute;
+    right: 0;
+}
+
+.progresProj{
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+}
+.progresProj label{
+    font-size: 12px;
+}
+.progresProj .cinza {
+    background-color: #C4C4C4;
+    border-radius: 100pt;
+    width: 100%;
+    height: 5px;
+    margin: 0 0 0 10px;
+}
+.progresProj .roxo{
+    background-color: #7F529A;
+    border-radius: 100pt;
+    width: 69%;
+    height: 5px;
 }
 
 .SubmitOptions{
@@ -162,3 +265,53 @@
     cursor: pointer;
 }
 
+.botaoCinzaRedondo{
+    background:  #C4C4C4;
+    border-radius: 20px;
+    padding: 5px 15px;
+    border: 1px solid #C4C4C4;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.botaoCinzaRedondo:hover{
+    background: #919191;
+    border: 1px solid #919191;
+}
+
+.adicionarFase {
+    margin-top: 20px;
+}
+
+.adicionarFase input{
+    border: 1px solid #C4C4C4;
+    padding: 10px 5px;
+    outline: none;
+    border-radius: 3.5px;
+}
+
+.nomeFase{
+    width: 60%;
+    margin-right: 20px;
+}
+
+.prazoFase{
+    width: 30%;
+}
+
+.referencias-inputs.app-calendario  .react-datepicker {
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+}
+
+.verde {
+    background-color: #3CB080;
+    border: none;
+}
+.verde:hover {
+    background-color: #32966c;
+    border: none;
+
+}

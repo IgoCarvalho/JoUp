@@ -76,3 +76,15 @@
     font-size: 15px;
     cursor: pointer;
 }
+
+.formapagamento {
+    padding-top: 30px;
+    font-size:14px;
+}
+
+.seletorFormaPagamento{
+    display: flex;
+}
+.seletorFormaPagamento input[type="radio"] {
+    width: auto;
+}

@@ -1,9 +1,12 @@
+.ContainerSolicitacao.detalhes {
+    width: auto;
+}
 .ContainerSolicitacao {
-    width: 100%;
-    transition: all 300ms;
+    margin-left: 50px;
 }
 .ContainerSolicitacao.open {
-    margin-left: 200px;
+    margin-left: 220px;
+    padding: 0 15px;
 }
 .ContainerSolicitacao .topSessao{
     border-bottom: 1px solid #B6B6B5;
@@ -156,13 +159,15 @@
     padding: 0;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    width: 330px;
 }
 .referencias li{
     background-color: rgb(235, 235, 235);
     border-radius: 50pt;
     padding: 4px 13px;
     font-size: 15px;
-    margin: 0 5px;
+    margin: 5px;
 }
 .referencias li a{
     color: #333333;
@@ -253,8 +258,9 @@
 }
 .botoes{
     text-align: right;
-    margin-right: 10px;
-    margin-top: 8em;
+    margin-top: auto;
+    /* margin-right: 10px;
+    margin-top: 8em; */
 }
 .botoes button{
     margin-left: 16px;

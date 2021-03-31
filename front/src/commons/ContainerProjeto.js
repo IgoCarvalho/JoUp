@@ -1,18 +1,64 @@
 import React, { Component } from 'react';
 import '../commons/ContainerProjeto.css';
-import { AiOutlineCalendar,AiOutlinePlus } from "react-icons/ai";
-import { BsCheckBox } from "react-icons/bs";
-import { FaPlus, FaCaretDown } from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa";
 import '../commons/BotaoRoxo.css';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchGetAllProjetos } from '../store/actions/projetosActions';
+import NoServiceIMG from '../images/NoServiceIMG.svg'
 
+import ProjetoCard from './ProjetoCard';
+import PageLoading from '../components/PageLoading';
 
 export class ContainerProjeto extends Component {
+
+    state = {
+        loading: true
+    }
+    
+    componentDidMount() {
+        const { fetchGetAllProjetos: getAllProjetos } = this.props;
+
+        getAllProjetos()
+            .then(res => {
+                console.log('pegou tudo tropinha');
+            })
+            .finally(() => {
+                this.setState({loading: false})
+            })
+    }
+
+    filterProjetos = () => {
+        const { projetos, finalizado: pageFinalizado } = this.props;
+
+        const result = projetos.filter((projeto) => {
+            const numCompletos = projeto.fases_projeto.filter((fase) => fase.completo);
+
+            const isFinalizado = numCompletos.length === projeto.fases_projeto.length;
+
+            if(Boolean(pageFinalizado)) {
+                return isFinalizado;
+            }
+            
+            return !isFinalizado;
+        })
+
+        console.log(Boolean(pageFinalizado));
+
+        return result;
+    }
+
     render() {
+
+        if(this.state.loading) {
+            return <PageLoading />
+        }
+        
+        const projetos = this.filterProjetos();
+
         return (
-            <div className={`ContainerProjeto ${this.props.menu && 'open'}`}>
+            <div className={`ContainerProjeto projeto ${this.props.menu && 'open'}`}>
                 <div className="topSessao">
-                    <h2>Projetos em andamento</h2>
+                    <h2> {this.props.finalizado ? 'Projetos finalizados' : 'Projetos em andamento'} </h2>
                     <div className="opcoesProjetoBotao">
                         <div className="dropdown">
                             <button className="dropdownbutton">Classificar por: Nome <FaCaretDown/></button>
@@ -26,39 +72,16 @@ export class ContainerProjeto extends Component {
                 </div>
                 <div className="CardsContainer">
                     <ul className="listaProjetos">
-                        <li>
-                            <h3 className="tituloProjeto">0764 - Construtop</h3>
-                            <span><i><BsCheckBox/></i>1/5 Finalização dos esboços desenvolvidos</span>
-                            <span><i><AiOutlineCalendar/></i>12 de Janeiro - 20 de Fevereiro</span>
-                            <div className="tagsProjetos"><label>Design</label><label>UX</label><label>IHC</label></div>
-                            <div className="progresProj">
-                                <div className="cinza">
-                                    <div className="roxo"></div>
+                        {
+                            projetos.length > 0? projetos?.map((p) => (
+                                <ProjetoCard key={p._id} projeto={p} />
+                            )) : (
+                                <div className="no-data">
+                                    <img src={NoServiceIMG} alt="sem serviços" />
+                                    <p>Você ainda não possui nenhum projeto ativo.</p>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <h3 className="tituloProjeto">0764 - Construtop</h3>
-                            <span><i><BsCheckBox/></i>1/5 Finalização dos esboços desenvolvidos</span>
-                            <span><i><AiOutlineCalendar/></i>12 de Janeiro - 20 de Fevereiro</span>
-                            <div className="tagsProjetos"><label>Design</label><label>UX</label><label>IHC</label></div>
-                            <div className="progresProj">
-                                <div className="cinza">
-                                    <div className="roxo"></div>
-                                </div>
-                            </div>
-                        </li>  
-                        <li>
-                            <h3 className="tituloProjeto">0764 - Construtop</h3>
-                            <span><i><BsCheckBox/></i>1/5 Finalização dos esboços desenvolvidos</span>
-                            <span><i><AiOutlineCalendar/></i>12 de Janeiro - 20 de Fevereiro</span>
-                            <div className="tagsProjetos"><label>Design</label><label>UX</label><label>IHC</label></div>
-                            <div className="progresProj">
-                                <div className="cinza">
-                                    <div className="roxo"></div>
-                                </div>
-                            </div>
-                        </li>  
+                            )
+                        }
                     </ul>
                 </div>
             </div>
@@ -66,4 +89,12 @@ export class ContainerProjeto extends Component {
     }
 }
 
-export default ContainerProjeto;
+const mapStateToProps = (state) => {
+    return {
+      projetos: state.projetos
+    };
+  };
+
+const mapDispatchToProps = { fetchGetAllProjetos };
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContainerProjeto);

@@ -1,0 +1,10 @@
+.desenvolvimento-message {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  color: #7f529a;
+}
+
+.dev .app-modal{
+  z-index: 5;
+}

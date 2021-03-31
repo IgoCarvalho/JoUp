@@ -29,10 +29,10 @@ export class FormCadastro extends Component {
     const { fetchSignup: signup, history } = this.props;
     const { name, email, password } = this.state;
 
-    signup({ name, email, password })
+    signup({ username: name, email, password })
       .then(() => {
         console.log('cadastrado');
-        history.push('opcoescadastro');
+        history.push('/opcoescadastro');
       })
       .catch((errorMessage) => {
         this.setState({ submitting: false });

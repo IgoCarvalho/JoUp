@@ -1,14 +1,14 @@
 import axios from '../utils/axios';
 
-const servicesService = {
-  createService(serviceData) {
+const projetosService = {
+  create(projetoData) {
     return new Promise((resolve, reject) => {
       axios
-        .post('services', serviceData)
+        .post('projetos', projetoData)
         .then((response) => {
-          const { service } = response.data;
+          const { project } = response.data;
 
-          resolve(service);
+          resolve(project);
         })
         .catch((error) => {
           const message = error.response.data.message;
@@ -21,11 +21,11 @@ const servicesService = {
   getAll() {
     return new Promise((resolve, reject) => {
       axios
-        .get('services')
+        .get('projetos')
         .then((response) => {
-          const { services } = response.data;
+          const { projects } = response.data;
 
-          resolve(services);
+          resolve(projects);
         })
         .catch((error) => {
           const message = error.response.data.message;
@@ -38,11 +38,11 @@ const servicesService = {
   getOne(id) {
     return new Promise((resolve, reject) => {
       axios
-        .get(`services/get/${id}`)
+        .get(`projetos/get/${id}`)
         .then((response) => {
-          const { service } = response.data;
+          const { project } = response.data;
 
-          resolve(service);
+          resolve(project);
         })
         .catch((error) => {
           const message = error.response.data.message;
@@ -52,14 +52,14 @@ const servicesService = {
         });
     });
   },
-  update(id, serviceData) {
+  update(id, projetoData) {
     return new Promise((resolve, reject) => {
       axios
-        .put(`services/update/${id}`, serviceData)
+        .put(`projetos/update/${id}`, projetoData)
         .then((response) => {
-          const { service } = response.data;
+          const { project } = response.data;
 
-          resolve(service);
+          resolve(project);
         })
         .catch((error) => {
           const message = error.response.data.message;
@@ -69,23 +69,23 @@ const servicesService = {
         });
     });
   },
-  delete(id) {
-    return new Promise((resolve, reject) => {
-      axios
-        .delete(`services/delete/${id}`)
-        .then((response) => {
-          const { services } = response.data;
+  // delete(id) {
+  //   return new Promise((resolve, reject) => {
+  //     axios
+  //       .delete(`services/delete/${id}`)
+  //       .then((response) => {
+  //         const { services } = response.data;
 
-          resolve(services);
-        })
-        .catch((error) => {
-          const message = error.response.data.message;
-          console.log(message);
+  //         resolve(services);
+  //       })
+  //       .catch((error) => {
+  //         const message = error.response.data.message;
+  //         console.log(message);
 
-          reject(message);
-        });
-    });
-  }
+  //         reject(message);
+  //       });
+  //   });
+  // }
 };
 
-export default servicesService;
+export default projetosService;

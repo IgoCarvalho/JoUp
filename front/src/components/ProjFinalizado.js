@@ -5,6 +5,8 @@ import ContainerProjFinalizado from '../commons/ContainerProjFinalizado';
 import '../components/Projetos.css';
 import Nav from './Nav';
 import NavPerfil from './NavPerfil';
+import ContainerProjeto from '../commons/ContainerProjeto';
+
 
 export class ProjFinalizado extends Component {
     state= {
@@ -19,7 +21,7 @@ export class ProjFinalizado extends Component {
             <div className="projetos">
                 <NavPerfil abrirMenu={this.abreMenu}/>
                 <AsideMenu page="projetos" menu={this.state.menu}/>
-                <ContainerProjFinalizado/>
+                <ContainerProjeto menu={this.state.menu} finalizado/>
             </div>
         )
     }

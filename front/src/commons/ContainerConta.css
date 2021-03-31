@@ -2,9 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 0 120px 4em 0;
     flex-direction: column;
     width: 100%;
+    margin-left: 50px;
+    padding: 0 120px;
+    padding-bottom: 50px;
 }
 .ContainerConta h2{
     color: #7f529a;

@@ -4,10 +4,11 @@ const userServices = {
   contractPlan(plan) {
     return new Promise((resolve, reject) => {
       axios
-        .put('users/update-plan', { plan })
+        .put('users/update-plan', plan)
         .then((response) => {
           const { user } = response.data;
 
+          console.log('users/update-plan: ',user);
           resolve(user);
         })
         .catch((error) => {
